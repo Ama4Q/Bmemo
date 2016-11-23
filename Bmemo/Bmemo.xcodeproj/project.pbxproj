@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		8160ED241DE591BE0030CC82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8160ED231DE591BE0030CC82 /* AppDelegate.swift */; };
-		8160ED261DE591BE0030CC82 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8160ED251DE591BE0030CC82 /* ViewController.swift */; };
 		8160ED291DE591BE0030CC82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8160ED271DE591BE0030CC82 /* Main.storyboard */; };
 		8160ED2B1DE591BE0030CC82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8160ED2A1DE591BE0030CC82 /* Assets.xcassets */; };
 		8160ED2E1DE591BE0030CC82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8160ED2C1DE591BE0030CC82 /* LaunchScreen.storyboard */; };
+		8160ED361DE59C2C0030CC82 /* BmmMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8160ED201DE591BE0030CC82 /* Bmemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bmemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8160ED231DE591BE0030CC82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8160ED251DE591BE0030CC82 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8160ED281DE591BE0030CC82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8160ED2A1DE591BE0030CC82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8160ED2D1DE591BE0030CC82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8160ED2F1DE591BE0030CC82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmMainTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				8160ED231DE591BE0030CC82 /* AppDelegate.swift */,
-				8160ED251DE591BE0030CC82 /* ViewController.swift */,
 				8160ED271DE591BE0030CC82 /* Main.storyboard */,
 				8160ED2A1DE591BE0030CC82 /* Assets.xcassets */,
 				8160ED2C1DE591BE0030CC82 /* LaunchScreen.storyboard */,
 				8160ED2F1DE591BE0030CC82 /* Info.plist */,
+				8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */,
 			);
 			path = Bmemo;
 			sourceTree = "<group>";
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8160ED261DE591BE0030CC82 /* ViewController.swift in Sources */,
+				8160ED361DE59C2C0030CC82 /* BmmMainTableViewController.swift in Sources */,
 				8160ED241DE591BE0030CC82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
