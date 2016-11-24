@@ -11,7 +11,7 @@ import UIKit
 class BmmMainTableViewController: UITableViewController {
     
     let BmmCloseCellHeight: CGFloat = 95
-    let BmmOpenCellHeight: CGFloat = 320
+    let BmmOpenCellHeight: CGFloat = 253
     
     var cellHeights = [CGFloat]()
     let rows = 10
