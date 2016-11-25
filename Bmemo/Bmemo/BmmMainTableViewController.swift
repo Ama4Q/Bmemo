@@ -25,6 +25,10 @@ class BmmMainTableViewController: UITableViewController {
         //self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
         tableView.backgroundView = UIView.init(image: UIImage(named: "background")!, rect: tableView.frame)
+        
+        navigationController?
+            .navigationBar
+            .titleTextAttributes = [NSForegroundColorAttributeName : UIColor.color(hexStr: "FF88D5", alpha: 1)]
     }
     
     func createCellHeights() {

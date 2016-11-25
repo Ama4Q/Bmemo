@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="thL-5X-ulR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="v0O-5d-HZu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,21 +7,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bmm Main Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="7MN-d9-BLd">
+            <objects>
+                <navigationController id="v0O-5d-HZu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ea4-Jk-V61">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="thL-5X-ulR" kind="relationship" relationship="rootViewController" id="dYW-BJ-7pm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y0Q-Ad-nZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-673" y="66"/>
+        </scene>
+        <!--Bmemo-->
         <scene sceneID="cbk-1M-jGV">
             <objects>
                 <tableViewController id="thL-5X-ulR" customClass="BmmMainTableViewController" customModule="Bmemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="334" sectionHeaderHeight="28" sectionFooterHeight="28" id="ckZ-Qg-tA9">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="351" sectionHeaderHeight="28" sectionFooterHeight="28" id="ckZ-Qg-tA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BmmCellId" rowHeight="334" id="fV9-Lu-HsT" customClass="memoCell" customModule="Bmemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="334"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BmmCellId" rowHeight="351" id="fV9-Lu-HsT" customClass="memoCell" customModule="Bmemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="351"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fV9-Lu-HsT" id="5aK-Mo-ZmV">
-                                    <frame key="frameInset" width="375" height="334"/>
+                                    <frame key="frameInset" width="375" height="351"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaE-8i-Nzp" userLabel="Foreground" customClass="BmmRotatedView" customModule="Bmemo" customModuleProvider="target">
@@ -136,7 +152,7 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NV-Lv-Cfh">
                                                             <connections>
-                                                                <action selector="goinDetail:" destination="fV9-Lu-HsT" eventType="touchUpInside" id="Kl6-TZ-ppA"/>
+                                                                <segue destination="GA7-vj-EHJ" kind="show" id="78r-KC-oAT"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -212,7 +228,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="iTf-hA-svF" secondAttribute="trailing" id="POX-sn-1ID"/>
                                                 <constraint firstItem="8PN-hW-9LR" firstAttribute="leading" secondItem="alU-Zh-Rk1" secondAttribute="leading" id="QGe-aM-qJY"/>
                                                 <constraint firstItem="iTf-hA-svF" firstAttribute="top" secondItem="Iw9-1C-jXm" secondAttribute="bottom" constant="0.5" id="SPA-eE-JSz"/>
-                                                <constraint firstAttribute="height" constant="236" id="kZC-Mf-Mbc"/>
+                                                <constraint firstAttribute="height" constant="235" id="kZC-Mf-Mbc"/>
+                                                <constraint firstAttribute="bottom" secondItem="iTf-hA-svF" secondAttribute="bottom" id="llT-Q7-sJ6"/>
                                                 <constraint firstAttribute="trailing" secondItem="Iw9-1C-jXm" secondAttribute="trailing" id="s6x-Dx-lBa"/>
                                                 <constraint firstItem="iTf-hA-svF" firstAttribute="leading" secondItem="alU-Zh-Rk1" secondAttribute="leading" id="ul3-mw-Jl2"/>
                                             </constraints>
@@ -258,10 +275,41 @@
                             <outlet property="delegate" destination="thL-5X-ulR" id="hEc-25-mYn"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Bmemo" id="466-at-108">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="48L-0A-7C2"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2M-Op-mFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="66.11694152923539"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="XF3-Rd-OtU">
+            <objects>
+                <tableViewController id="GA7-vj-EHJ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EeE-dy-3as">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XWD-FL-Oz4">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XWD-FL-Oz4" id="TTj-NO-Ca8">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GA7-vj-EHJ" id="PCO-od-ApN"/>
+                            <outlet property="delegate" destination="GA7-vj-EHJ" id="jos-6c-Lay"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAn-MQ-v7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="66"/>
         </scene>
     </scenes>
     <resources>
@@ -269,4 +317,5 @@
         <image name="dots" width="14" height="84"/>
         <image name="photo" width="98" height="98"/>
     </resources>
+    <color key="tintColor" red="1" green="0.53181111148903737" blue="0.8369975547278683" alpha="1" colorSpace="calibratedRGB"/>
 </document>

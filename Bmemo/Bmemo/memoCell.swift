@@ -60,12 +60,6 @@ class memoCell: BmmTableViewCell {
         foregroundView.layer.cornerRadius = 10
         foregroundView.layer.masksToBounds = true
         
-        foregroundView.layer.borderWidth = 0.2
-        foregroundView.layer.borderColor = UIColor.groupTableViewBackground.cgColor
-        
-        detailView.layer.borderWidth = 0.2
-        detailView.layer.borderColor = UIColor.groupTableViewBackground.cgColor
-        
         super.awakeFromNib()
     }
     
@@ -74,11 +68,4 @@ class memoCell: BmmTableViewCell {
         return durations[itemIndex]
     }
     
-}
-
-// MARK: - actions
-extension memoCell {
-    @IBAction func goinDetail(_ sender: UIButton) {
-        debugPrint("fuck your m d a!")
-    }
 }
