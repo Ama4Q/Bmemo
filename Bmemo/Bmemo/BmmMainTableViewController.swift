@@ -22,7 +22,9 @@ class BmmMainTableViewController: UITableViewController {
         super.viewDidLoad()
 
         createCellHeights()
-        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        //self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        
+        tableView.backgroundView = UIView.init(image: UIImage(named: "background")!, rect: tableView.frame)
     }
     
     func createCellHeights() {
@@ -88,7 +90,6 @@ class BmmMainTableViewController: UITableViewController {
             tableView.beginUpdates()
             tableView.endUpdates()
             }, completion: nil)
-        
         
     }
 }
