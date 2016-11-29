@@ -58,7 +58,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.81885291238978808" green="0.90870519558494534" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.94509803921568625" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="yC6-7T-ngQ" firstAttribute="centerX" secondItem="cmF-iN-tjA" secondAttribute="centerX" id="QbM-QN-oys"/>
                                                         <constraint firstAttribute="width" constant="88" id="c3v-YE-MB2"/>
@@ -88,7 +88,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.85490196078431369" green="0.96470588235294119" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="fh4-uR-hr5" firstAttribute="trailing" secondItem="ypg-5M-iE1" secondAttribute="trailing" id="5iW-Zy-9yK"/>
                                                 <constraint firstItem="7re-if-TwC" firstAttribute="leading" secondItem="cmF-iN-tjA" secondAttribute="trailing" constant="8" id="8VJ-2C-E1h"/>
@@ -113,13 +113,20 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PN-hW-9LR" userLabel="photo">
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" highlightedImage="photo" translatesAutoresizingMaskIntoConstraints="NO" id="Wiq-pJ-awD">
+                                                            <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="66" id="9Bh-N0-Isp"/>
                                                                 <constraint firstAttribute="width" constant="66" id="O6a-gt-Pvh"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.81885291240000002" green="0.90870519559999996" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="0.94509803921568625" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="78" id="6NL-HU-ITS"/>
                                                         <constraint firstItem="Wiq-pJ-awD" firstAttribute="centerY" secondItem="8PN-hW-9LR" secondAttribute="centerY" id="HZK-aC-rJ3"/>
@@ -156,7 +163,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.87494756711409383" green="1" blue="0.94693791946308725" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="78" id="2mf-dW-a5H"/>
                                                         <constraint firstItem="D6F-Nr-CD0" firstAttribute="top" secondItem="0Uq-FH-3xK" secondAttribute="bottom" constant="8" id="7Yn-oD-zPC"/>
@@ -198,7 +205,7 @@
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB0-ud-lnk"/>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.85490196078431369" green="0.96470588235294119" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="3RO-pm-DWA" firstAttribute="top" secondItem="puX-DX-wht" secondAttribute="bottom" constant="8" id="2Ja-Ph-mXg"/>
                                                         <constraint firstItem="3RO-pm-DWA" firstAttribute="leading" secondItem="iTf-hA-svF" secondAttribute="leading" constant="8" id="HeZ-ka-8IP"/>
@@ -283,16 +290,16 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="66.11694152923539"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Detail-->
         <scene sceneID="XF3-Rd-OtU">
             <objects>
-                <tableViewController id="GA7-vj-EHJ" sceneMemberID="viewController">
+                <tableViewController title="Detail" id="GA7-vj-EHJ" customClass="BmmDetailTableViewController" customModule="Bmemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="EeE-dy-3as">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XWD-FL-Oz4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BmmDetailCellId" id="XWD-FL-Oz4">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XWD-FL-Oz4" id="TTj-NO-Ca8">
@@ -301,6 +308,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="GA7-vj-EHJ" id="PCO-od-ApN"/>
                             <outlet property="delegate" destination="GA7-vj-EHJ" id="jos-6c-Lay"/>

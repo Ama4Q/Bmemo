@@ -15,6 +15,8 @@
 		81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD824D1DE7F53D0017A3C6 /* UIView_Bmm.swift */; };
 		81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD824F1DE7FC570017A3C6 /* UIimage_Bmm.swift */; };
 		81CD82521DE806BA0017A3C6 /* UIColor_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD82511DE806BA0017A3C6 /* UIColor_Bmm.swift */; };
+		81EBA0981DED7198003FBF21 /* BmmHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */; };
+		81EBA09A1DED8432003FBF21 /* BmmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */; };
 		81F2B7571DE68E05003E0D4C /* BmmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2B7561DE68E05003E0D4C /* BmmTableViewCell.swift */; };
 		81F2B7591DE68FCD003E0D4C /* BmmRotatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2B7581DE68FCD003E0D4C /* BmmRotatedView.swift */; };
 		81F2B75B1DE6DB46003E0D4C /* memoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2B75A1DE6DB46003E0D4C /* memoCell.swift */; };
@@ -34,6 +36,8 @@
 		81CD824D1DE7F53D0017A3C6 /* UIView_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Bmm.swift; sourceTree = "<group>"; };
 		81CD824F1DE7FC570017A3C6 /* UIimage_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIimage_Bmm.swift; sourceTree = "<group>"; };
 		81CD82511DE806BA0017A3C6 /* UIColor_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Bmm.swift; sourceTree = "<group>"; };
+		81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmHeaderView.swift; sourceTree = "<group>"; };
+		81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmDetailTableViewController.swift; sourceTree = "<group>"; };
 		81F2B7561DE68E05003E0D4C /* BmmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmTableViewCell.swift; sourceTree = "<group>"; };
 		81F2B7581DE68FCD003E0D4C /* BmmRotatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmRotatedView.swift; sourceTree = "<group>"; };
 		81F2B75A1DE6DB46003E0D4C /* memoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memoCell.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				8160ED2F1DE591BE0030CC82 /* Info.plist */,
 				8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */,
 				81F2B75A1DE6DB46003E0D4C /* memoCell.swift */,
+				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
+				81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */,
 			);
 			path = Bmemo;
 			sourceTree = "<group>";
@@ -242,7 +248,9 @@
 				8160ED361DE59C2C0030CC82 /* BmmMainTableViewController.swift in Sources */,
 				81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */,
 				81F2B75B1DE6DB46003E0D4C /* memoCell.swift in Sources */,
+				81EBA09A1DED8432003FBF21 /* BmmDetailTableViewController.swift in Sources */,
 				81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */,
+				81EBA0981DED7198003FBF21 /* BmmHeaderView.swift in Sources */,
 				81CD82521DE806BA0017A3C6 /* UIColor_Bmm.swift in Sources */,
 				81F2B7591DE68FCD003E0D4C /* BmmRotatedView.swift in Sources */,
 				81F2B7571DE68E05003E0D4C /* BmmTableViewCell.swift in Sources */,
