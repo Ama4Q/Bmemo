@@ -73,6 +73,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		810711DB1DEDBB1B003D8FD1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */,
+				81F2B75A1DE6DB46003E0D4C /* memoCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		810711DC1DEDBB31003D8FD1 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
+				81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		8160ED171DE591BE0030CC82 = {
 			isa = PBXGroup;
 			children = (
@@ -95,15 +113,13 @@
 			isa = PBXGroup;
 			children = (
 				81F2B7551DE68DF0003E0D4C /* Cell */,
+				810711DB1DEDBB1B003D8FD1 /* Main */,
+				810711DC1DEDBB31003D8FD1 /* Detail */,
 				8160ED231DE591BE0030CC82 /* AppDelegate.swift */,
 				8160ED271DE591BE0030CC82 /* Main.storyboard */,
 				8160ED2A1DE591BE0030CC82 /* Assets.xcassets */,
 				8160ED2C1DE591BE0030CC82 /* LaunchScreen.storyboard */,
 				8160ED2F1DE591BE0030CC82 /* Info.plist */,
-				8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */,
-				81F2B75A1DE6DB46003E0D4C /* memoCell.swift */,
-				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
-				81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */,
 			);
 			path = Bmemo;
 			sourceTree = "<group>";

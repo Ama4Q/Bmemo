@@ -33,11 +33,9 @@ open class BmmHeaderView: UIView {
     }
     
     // MARK: - Rxsiwft scrollView
-    
     fileprivate var headerBtn: UIButton? {
         willSet {
-            newValue?
-                .rx
+            newValue?.rx
                 .controlEvent(.touchUpInside)
                 .subscribe({ [weak self] _ in
                     self?.clickHeaderClosure!()
@@ -48,8 +46,7 @@ open class BmmHeaderView: UIView {
     
     fileprivate var scrollView: UIScrollView? {
         willSet {
-            newValue?
-                .rx
+            newValue?.rx
                 .observe(CGPoint.self, kContentOffset)
                 .subscribe(onNext: { [weak self] (point) in
                     guard let offsety = point?.y else { return }
@@ -57,11 +54,9 @@ open class BmmHeaderView: UIView {
                     if offsety < 0 { scale = min(1.2, 1 - offsety / 300) } else
                         if offsety > 0 { scale = max(0.55, 1 - offsety / 300) }
                     
-                    self?
-                        .headerBtn?
+                    self?.headerBtn?
                         .transform = CGAffineTransform(scaleX: scale, y: scale)
-                    self?
-                        .headerBtn?
+                    self?.headerBtn?
                         .frame
                         .origin
                         .y = 15
