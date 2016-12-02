@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81536D011DF1C1100026BC65 /* BmmNinameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81536D001DF1C1100026BC65 /* BmmNinameCell.swift */; };
+		81536D031DF1C1460026BC65 /* BmmCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */; };
+		81536D051DF1C17D0026BC65 /* BmmAlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */; };
+		81536D071DF1C1E90026BC65 /* BmmRemarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81536D061DF1C1E90026BC65 /* BmmRemarkCell.swift */; };
 		8160ED241DE591BE0030CC82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8160ED231DE591BE0030CC82 /* AppDelegate.swift */; };
 		8160ED291DE591BE0030CC82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8160ED271DE591BE0030CC82 /* Main.storyboard */; };
 		8160ED2B1DE591BE0030CC82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8160ED2A1DE591BE0030CC82 /* Assets.xcassets */; };
@@ -26,6 +30,10 @@
 /* Begin PBXFileReference section */
 		0D20E4AADB2F21A389E99A51 /* Pods-Bmemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bmemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bmemo/Pods-Bmemo.debug.xcconfig"; sourceTree = "<group>"; };
 		26656880E43DD4EDAF52701D /* Pods-Bmemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bmemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bmemo/Pods-Bmemo.release.xcconfig"; sourceTree = "<group>"; };
+		81536D001DF1C1100026BC65 /* BmmNinameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmNinameCell.swift; sourceTree = "<group>"; };
+		81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmCalendarCell.swift; sourceTree = "<group>"; };
+		81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmAlarmCell.swift; sourceTree = "<group>"; };
+		81536D061DF1C1E90026BC65 /* BmmRemarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmRemarkCell.swift; sourceTree = "<group>"; };
 		8160ED201DE591BE0030CC82 /* Bmemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bmemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8160ED231DE591BE0030CC82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8160ED281DE591BE0030CC82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +95,10 @@
 			children = (
 				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
 				81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */,
+				81536D001DF1C1100026BC65 /* BmmNinameCell.swift */,
+				81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */,
+				81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */,
+				81536D061DF1C1E90026BC65 /* BmmRemarkCell.swift */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -262,14 +274,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8160ED361DE59C2C0030CC82 /* BmmMainTableViewController.swift in Sources */,
+				81536D051DF1C17D0026BC65 /* BmmAlarmCell.swift in Sources */,
 				81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */,
+				81536D031DF1C1460026BC65 /* BmmCalendarCell.swift in Sources */,
 				81F2B75B1DE6DB46003E0D4C /* memoCell.swift in Sources */,
+				81536D011DF1C1100026BC65 /* BmmNinameCell.swift in Sources */,
 				81EBA09A1DED8432003FBF21 /* BmmDetailTableViewController.swift in Sources */,
 				81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */,
 				81EBA0981DED7198003FBF21 /* BmmHeaderView.swift in Sources */,
 				81CD82521DE806BA0017A3C6 /* UIColor_Bmm.swift in Sources */,
 				81F2B7591DE68FCD003E0D4C /* BmmRotatedView.swift in Sources */,
 				81F2B7571DE68E05003E0D4C /* BmmTableViewCell.swift in Sources */,
+				81536D071DF1C1E90026BC65 /* BmmRemarkCell.swift in Sources */,
 				8160ED241DE591BE0030CC82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +410,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6ZTMT7BFHK;
 				INFOPLIST_FILE = Bmemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ama.Qiu.Bmemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +425,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6ZTMT7BFHK;
 				INFOPLIST_FILE = Bmemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ama.Qiu.Bmemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
