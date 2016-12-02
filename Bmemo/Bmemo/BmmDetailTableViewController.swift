@@ -29,7 +29,7 @@ class BmmDetailTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+/*
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 20
@@ -44,6 +44,7 @@ class BmmDetailTableViewController: UITableViewController {
 
         return cell
     }
+ */
 
     /*
     // Override to support conditional editing of the table view.
