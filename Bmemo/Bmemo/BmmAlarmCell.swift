@@ -8,8 +8,10 @@
 
 import UIKit
 
-class BmmAlarmCell: UITableViewCell {
+class BmmAlarmCell: BmmBaseCell {
 
+    @IBOutlet weak var alarmNameLabel: UILabel!
+    @IBOutlet weak var alarmDateLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

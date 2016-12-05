@@ -8,8 +8,10 @@
 
 import UIKit
 
-class BmmCalendarCell: UITableViewCell {
+class BmmCalendarCell: BmmBaseCell {
 
+    @IBOutlet weak var CalendarLabel: UILabel!
+    @IBOutlet weak var dateTexiField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -8,9 +8,15 @@
 
 import UIKit
 
+public enum ExCell: String {
+    case close = "close"
+    case open = "open"
+}
+
 class BmmDetailTableViewController: UITableViewController {
 
-    var tmpStatus: Bool = false
+    fileprivate lazy var alertStatus: ExCell = .close
+    fileprivate lazy var addStatus: ExCell = .close
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +28,11 @@ class BmmDetailTableViewController: UITableViewController {
         navigationItem.titleView = headerView
         headerView.reloadSizeWithScrollView(scrollView: tableView)
         
-        headerView.handleClickActionWithClosure { 
+        headerView.handleClickActionWithClosure {
+            
             print("aaa")
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.tmpStatus = true
-            self.tableView.beginUpdates()
-            self.tableView.endUpdates()
-        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,54 +50,41 @@ extension BmmDetailTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell:UITableViewCell?
-        
-        switch indexPath.row {
-        case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "BmmNinameCellId", for: indexPath) as! BmmNinameCell
-        case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: "BmmAddCellId", for: indexPath)
-        case 2:
-            fallthrough
-        case 3:
-            cell = tableView.dequeueReusableCell(withIdentifier: "BmmCalendarCellId", for: indexPath) as! BmmCalendarCell
-        case 4:
-            cell = tableView.dequeueReusableCell(withIdentifier: "BmmAlertCellId", for: indexPath)
-        case 5:
-            cell = tableView.dequeueReusableCell(withIdentifier: "BmmAlarmCellId", for: indexPath) as! BmmAlarmCell
-        default:
-            cell = tableView.dequeueReusableCell(withIdentifier: "BmmRemarkCellId", for: indexPath) as! BmmRemarkCell
+        let cell = BmmBaseCell().cellWithIndexPath(tv: tableView, ip: indexPath)
+        if cell is BmmAlertCell {
+            let alertCell = cell as? BmmAlertCell
+            alertCell?.delegate = self
         }
-        
-        return cell!
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        var hg: CGFloat = 44
-        
-        switch indexPath.row {
-        case 0:
-            hg = 80
-        case 1:
-            break
-        case 2:
-            fallthrough
-        case 3:
-            hg = 70
-        case 4:
-            break
-        case 5:
-            if tmpStatus {
-                hg = 70
-            } else {
-                hg = 0
-            }
-        default:
-            hg = 100
-        }
-        
-        return hg
+        return CGFloat(index: indexPath.row, cS: addStatus, aS: alertStatus)
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectCell = tableView.cellForRow(at: indexPath)
+        
+        if selectCell is BmmAlarmCell {
+            
+        } else {
+            // code test
+            addStatus = .open
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
+    }
 }
+
+// MARK: - BmmAlertCell cloure
+extension BmmDetailTableViewController: BmmAlertCellDelegate {
+    func isSwitch(on: Bool, alertCell: BmmAlertCell) {
+        alertStatus = on == true ? .open : .close
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+}
+

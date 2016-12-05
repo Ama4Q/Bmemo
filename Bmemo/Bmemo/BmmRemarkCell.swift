@@ -8,8 +8,9 @@
 
 import UIKit
 
-class BmmRemarkCell: UITableViewCell {
+class BmmRemarkCell: BmmBaseCell {
 
+    @IBOutlet weak var remarkTextView: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

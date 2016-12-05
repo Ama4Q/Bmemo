@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="v0O-5d-HZu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="v0O-5d-HZu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -322,14 +321,13 @@
         <!--Bmm Detail Table View Controller-->
         <scene sceneID="1FT-l3-UMj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2cD-u7-AHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="i4P-1i-GrV" customClass="BmmDetailTableViewController" customModule="Bmemo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="quB-xO-RTk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BmmNinameCellId" rowHeight="83" id="XWD-FL-Oz4" customClass="BmmNinameCell" customModule="Bmemo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BmmNinameCellId" rowHeight="83" id="XWD-FL-Oz4" customClass="BmmNinameCell" customModule="Bmemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XWD-FL-Oz4" id="TTj-NO-Ca8">
@@ -352,8 +350,11 @@
                                         <constraint firstAttribute="trailing" secondItem="gzS-8x-cMx" secondAttribute="trailing" constant="10" id="xI4-SK-ErZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="niNameTextField" destination="gzS-8x-cMx" id="W8Z-eU-s0y"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BmmAddCellId" textLabel="pgJ-nD-aVN" style="IBUITableViewCellStyleDefault" id="ebW-mV-PF3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BmmAddCellId" textLabel="pgJ-nD-aVN" style="IBUITableViewCellStyleDefault" id="ebW-mV-PF3">
                                 <rect key="frame" x="0.0" y="111" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebW-mV-PF3" id="fzg-fa-lFO">
@@ -370,7 +371,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BmmCalendarCellId" rowHeight="70" id="cyJ-Vh-EM2" customClass="BmmCalendarCell" customModule="Bmemo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BmmCalendarCellId" rowHeight="70" id="cyJ-Vh-EM2" customClass="BmmCalendarCell" customModule="Bmemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="155" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cyJ-Vh-EM2" id="v7Z-5h-uMW">
@@ -398,6 +399,9 @@
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="cyJ-Vh-EM2" id="sSU-Jc-r1L"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -411,8 +415,12 @@
                                         <constraint firstItem="gv6-90-ReX" firstAttribute="leading" secondItem="F56-Bi-6lh" secondAttribute="trailing" constant="10" id="u3f-NH-7Yd"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="CalendarLabel" destination="Kyo-gb-taN" id="klP-TJ-ABB"/>
+                                    <outlet property="dateTexiField" destination="gv6-90-ReX" id="UyN-1E-X2l"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BmmAlertCellId" id="f66-bC-A28">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BmmAlertCellId" id="f66-bC-A28" customClass="BmmAlertCell" customModule="Bmemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="225" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f66-bC-A28" id="UOq-Dv-kK5">
@@ -426,6 +434,9 @@
                                                     <color key="value" red="1" green="0.53333333333333333" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="BmmSwitch:" destination="f66-bC-A28" eventType="valueChanged" id="utp-3j-Mf0"/>
+                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生日提醒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFR-Du-9lX">
                                             <rect key="frame" x="18" y="11" width="70" height="21"/>
@@ -446,7 +457,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BmmAlarmCellId" rowHeight="70" id="M9U-eS-AKo" customClass="BmmAlarmCell" customModule="Bmemo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BmmAlarmCellId" rowHeight="70" id="M9U-eS-AKo" customClass="BmmAlarmCell" customModule="Bmemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="269" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M9U-eS-AKo" id="iLC-bZ-dKi">
@@ -478,8 +489,12 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="DON-D5-EhV" secondAttribute="trailing" constant="18" id="fZN-8o-MUk"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="alarmDateLabel" destination="DON-D5-EhV" id="Qed-Fd-bkd"/>
+                                    <outlet property="alarmNameLabel" destination="vuY-bO-JXM" id="Nkn-sH-wvB"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BmmRemarkCellId" rowHeight="106" id="GAL-AG-SW7" customClass="BmmRemarkCell" customModule="Bmemo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BmmRemarkCellId" rowHeight="106" id="GAL-AG-SW7" customClass="BmmRemarkCell" customModule="Bmemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="339" width="375" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GAL-AG-SW7" id="3gx-YF-ISE">
@@ -501,6 +516,9 @@
                                         <constraint firstAttribute="trailing" secondItem="AGy-14-pxq" secondAttribute="trailing" constant="5" id="xbq-4b-TSQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="remarkTextView" destination="AGy-14-pxq" id="TMW-jd-d4H"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -509,6 +527,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cD-u7-AHG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884" y="65"/>
         </scene>
@@ -522,5 +541,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="H6y-k0-cId"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="1" green="0.53181111148903737" blue="0.8369975547278683" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="1" green="0.53333333333333333" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
 </document>

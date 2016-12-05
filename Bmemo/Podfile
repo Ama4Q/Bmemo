@@ -9,5 +9,6 @@ target 'Bmemo' do
   # Pods for Bmemo
   pod 'RxSwift',    '~> 3.0'
   pod 'RxCocoa',    '~> 3.0'
+  pod 'ObjectMapper',    '~> 2.2.1'
 
 end

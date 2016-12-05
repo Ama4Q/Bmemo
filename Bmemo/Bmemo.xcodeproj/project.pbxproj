@@ -16,6 +16,9 @@
 		8160ED2B1DE591BE0030CC82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8160ED2A1DE591BE0030CC82 /* Assets.xcassets */; };
 		8160ED2E1DE591BE0030CC82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8160ED2C1DE591BE0030CC82 /* LaunchScreen.storyboard */; };
 		8160ED361DE59C2C0030CC82 /* BmmMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */; };
+		817AFAEF1DF5568500BA98DF /* BmmBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */; };
+		817AFAF71DF5738300BA98DF /* BmmAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */; };
+		817AFAF91DF579FB00BA98DF /* CGFloat_ExCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAF81DF579FB00BA98DF /* CGFloat_ExCell.swift */; };
 		81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD824D1DE7F53D0017A3C6 /* UIView_Bmm.swift */; };
 		81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD824F1DE7FC570017A3C6 /* UIimage_Bmm.swift */; };
 		81CD82521DE806BA0017A3C6 /* UIColor_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD82511DE806BA0017A3C6 /* UIColor_Bmm.swift */; };
@@ -41,6 +44,9 @@
 		8160ED2D1DE591BE0030CC82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8160ED2F1DE591BE0030CC82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmMainTableViewController.swift; sourceTree = "<group>"; };
+		817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmBaseCell.swift; sourceTree = "<group>"; };
+		817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmAlertCell.swift; sourceTree = "<group>"; };
+		817AFAF81DF579FB00BA98DF /* CGFloat_ExCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat_ExCell.swift; sourceTree = "<group>"; };
 		81CD824D1DE7F53D0017A3C6 /* UIView_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Bmm.swift; sourceTree = "<group>"; };
 		81CD824F1DE7FC570017A3C6 /* UIimage_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIimage_Bmm.swift; sourceTree = "<group>"; };
 		81CD82511DE806BA0017A3C6 /* UIColor_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Bmm.swift; sourceTree = "<group>"; };
@@ -85,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */,
-				81F2B75A1DE6DB46003E0D4C /* memoCell.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -93,12 +98,7 @@
 		810711DC1DEDBB31003D8FD1 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
 				81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */,
-				81536D001DF1C1100026BC65 /* BmmNinameCell.swift */,
-				81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */,
-				81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */,
-				81536D061DF1C1E90026BC65 /* BmmRemarkCell.swift */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -124,9 +124,9 @@
 		8160ED221DE591BE0030CC82 /* Bmemo */ = {
 			isa = PBXGroup;
 			children = (
-				81F2B7551DE68DF0003E0D4C /* Cell */,
-				810711DB1DEDBB1B003D8FD1 /* Main */,
-				810711DC1DEDBB31003D8FD1 /* Detail */,
+				817AFAF41DF5707600BA98DF /* bll */,
+				817AFAF11DF56FFF00BA98DF /* ui */,
+				817AFAF51DF5710700BA98DF /* Ctrl */,
 				8160ED231DE591BE0030CC82 /* AppDelegate.swift */,
 				8160ED271DE591BE0030CC82 /* Main.storyboard */,
 				8160ED2A1DE591BE0030CC82 /* Assets.xcassets */,
@@ -134,6 +134,55 @@
 				8160ED2F1DE591BE0030CC82 /* Info.plist */,
 			);
 			path = Bmemo;
+			sourceTree = "<group>";
+		};
+		817AFAF11DF56FFF00BA98DF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				817AFAF31DF5703A00BA98DF /* Detail */,
+				817AFAF21DF5702C00BA98DF /* Main */,
+				81F2B7551DE68DF0003E0D4C /* Cell */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		817AFAF21DF5702C00BA98DF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				81F2B75A1DE6DB46003E0D4C /* memoCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		817AFAF31DF5703A00BA98DF /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
+				817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */,
+				81536D001DF1C1100026BC65 /* BmmNinameCell.swift */,
+				81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */,
+				81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */,
+				81536D061DF1C1E90026BC65 /* BmmRemarkCell.swift */,
+				817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		817AFAF41DF5707600BA98DF /* bll */ = {
+			isa = PBXGroup;
+			children = (
+				817AFAF81DF579FB00BA98DF /* CGFloat_ExCell.swift */,
+			);
+			name = bll;
+			sourceTree = "<group>";
+		};
+		817AFAF51DF5710700BA98DF /* Ctrl */ = {
+			isa = PBXGroup;
+			children = (
+				810711DC1DEDBB31003D8FD1 /* Detail */,
+				810711DB1DEDBB1B003D8FD1 /* Main */,
+			);
+			name = Ctrl;
 			sourceTree = "<group>";
 		};
 		81F2B7551DE68DF0003E0D4C /* Cell */ = {
@@ -274,10 +323,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8160ED361DE59C2C0030CC82 /* BmmMainTableViewController.swift in Sources */,
+				817AFAF71DF5738300BA98DF /* BmmAlertCell.swift in Sources */,
 				81536D051DF1C17D0026BC65 /* BmmAlarmCell.swift in Sources */,
 				81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */,
+				817AFAF91DF579FB00BA98DF /* CGFloat_ExCell.swift in Sources */,
 				81536D031DF1C1460026BC65 /* BmmCalendarCell.swift in Sources */,
 				81F2B75B1DE6DB46003E0D4C /* memoCell.swift in Sources */,
+				817AFAEF1DF5568500BA98DF /* BmmBaseCell.swift in Sources */,
 				81536D011DF1C1100026BC65 /* BmmNinameCell.swift in Sources */,
 				81EBA09A1DED8432003FBF21 /* BmmDetailTableViewController.swift in Sources */,
 				81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */,
