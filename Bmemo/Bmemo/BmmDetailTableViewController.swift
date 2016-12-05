@@ -29,7 +29,6 @@ class BmmDetailTableViewController: UITableViewController {
         headerView.reloadSizeWithScrollView(scrollView: tableView)
         
         headerView.handleClickActionWithClosure {
-            
             print("aaa")
         }
         
@@ -72,8 +71,8 @@ extension BmmDetailTableViewController {
             
         } else {
             // code test
-            addStatus = .open
             tableView.beginUpdates()
+            addStatus = .open
             tableView.endUpdates()
         }
     }
@@ -82,8 +81,8 @@ extension BmmDetailTableViewController {
 // MARK: - BmmAlertCell cloure
 extension BmmDetailTableViewController: BmmAlertCellDelegate {
     func isSwitch(on: Bool, alertCell: BmmAlertCell) {
-        alertStatus = on == true ? .open : .close
         tableView.beginUpdates()
+        alertStatus = (on == true) ? .open : .close
         tableView.endUpdates()
     }
 }
