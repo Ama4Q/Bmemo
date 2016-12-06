@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81021C441DF66E590065C859 /* BmmMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81021C431DF66E590065C859 /* BmmMembers.swift */; };
 		81536D011DF1C1100026BC65 /* BmmNinameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81536D001DF1C1100026BC65 /* BmmNinameCell.swift */; };
 		81536D031DF1C1460026BC65 /* BmmCalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */; };
 		81536D051DF1C17D0026BC65 /* BmmAlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		0D20E4AADB2F21A389E99A51 /* Pods-Bmemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bmemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bmemo/Pods-Bmemo.debug.xcconfig"; sourceTree = "<group>"; };
 		26656880E43DD4EDAF52701D /* Pods-Bmemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bmemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bmemo/Pods-Bmemo.release.xcconfig"; sourceTree = "<group>"; };
+		81021C431DF66E590065C859 /* BmmMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmMembers.swift; sourceTree = "<group>"; };
 		81536D001DF1C1100026BC65 /* BmmNinameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmNinameCell.swift; sourceTree = "<group>"; };
 		81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmCalendarCell.swift; sourceTree = "<group>"; };
 		81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmAlarmCell.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 				26656880E43DD4EDAF52701D /* Pods-Bmemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		81021C421DF66E180065C859 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				81021C431DF66E590065C859 /* BmmMembers.swift */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 		810711DB1DEDBB1B003D8FD1 /* Main */ = {
@@ -171,6 +181,7 @@
 		817AFAF41DF5707600BA98DF /* bll */ = {
 			isa = PBXGroup;
 			children = (
+				81021C421DF66E180065C859 /* models */,
 				817AFAF81DF579FB00BA98DF /* CGFloat_ExCell.swift */,
 			);
 			name = bll;
@@ -338,6 +349,7 @@
 				81F2B7591DE68FCD003E0D4C /* BmmRotatedView.swift in Sources */,
 				81F2B7571DE68E05003E0D4C /* BmmTableViewCell.swift in Sources */,
 				81536D071DF1C1E90026BC65 /* BmmRemarkCell.swift in Sources */,
+				81021C441DF66E590065C859 /* BmmMembers.swift in Sources */,
 				8160ED241DE591BE0030CC82 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

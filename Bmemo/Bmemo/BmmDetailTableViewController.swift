@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 public enum ExCell: String {
     case close = "close"
@@ -15,14 +18,32 @@ public enum ExCell: String {
 
 class BmmDetailTableViewController: UITableViewController {
 
-    fileprivate lazy var alertStatus: ExCell = .close
-    fileprivate lazy var addStatus: ExCell = .close
+    fileprivate lazy var alertStatus: Variable<ExCell> = Variable(.close)
+    fileprivate lazy var addStatus: Variable<ExCell> = Variable(.close)
+    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView()
+        // UI
+        UI()
+        // Rx_observe
+        RxMethod()
+        
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+
+// MARK: - UI
+extension BmmDetailTableViewController {
+    fileprivate func UI() {
+        tableView.tableFooterView = UIView()
+        
         let headerView = BmmHeaderView()
         headerView.photo = UIImage(named: "photo")
         navigationItem.titleView = headerView
@@ -31,14 +52,23 @@ class BmmDetailTableViewController: UITableViewController {
         headerView.handleClickActionWithClosure {
             print("aaa")
         }
-        
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+// MARK: - RxSwift method
+extension BmmDetailTableViewController {
+    fileprivate func RxMethod() {
+        Observable
+            .combineLatest(addStatus.asObservable(), alertStatus.asObservable()) {
+                ($0, $1)
+            }
+            .shareReplay(1)
+            .subscribe(onNext: { [weak self] _ in
+                self?.tableView.beginUpdates()
+                self?.tableView.endUpdates()
+            })
+            .addDisposableTo(disposeBag)
     }
-    
 }
 
 // MARK: - Table view data source
@@ -59,8 +89,9 @@ extension BmmDetailTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return CGFloat(index: indexPath.row, cS: addStatus, aS: alertStatus)
+        return CGFloat(index: indexPath.row, cS: addStatus.value, aS: alertStatus.value)
     }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -71,9 +102,7 @@ extension BmmDetailTableViewController {
             
         } else {
             // code test
-            tableView.beginUpdates()
-            addStatus = .open
-            tableView.endUpdates()
+            addStatus.value = .open
         }
     }
 }
@@ -81,9 +110,7 @@ extension BmmDetailTableViewController {
 // MARK: - BmmAlertCell cloure
 extension BmmDetailTableViewController: BmmAlertCellDelegate {
     func isSwitch(on: Bool, alertCell: BmmAlertCell) {
-        tableView.beginUpdates()
-        alertStatus = (on == true) ? .open : .close
-        tableView.endUpdates()
+        alertStatus.value = (on == true) ? .open : .close
     }
 }
 
