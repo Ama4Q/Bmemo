@@ -396,7 +396,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Nry-4E-2vx"/>
                                             </constraints>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
@@ -416,7 +416,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="CalendarLabel" destination="Kyo-gb-taN" id="klP-TJ-ABB"/>
+                                    <outlet property="calendarLabel" destination="Kyo-gb-taN" id="PRd-VU-DVZ"/>
                                     <outlet property="dateTexiField" destination="gv6-90-ReX" id="UyN-1E-X2l"/>
                                 </connections>
                             </tableViewCell>

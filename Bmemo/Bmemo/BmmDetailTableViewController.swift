@@ -23,6 +23,15 @@ class BmmDetailTableViewController: UITableViewController {
     
     let disposeBag = DisposeBag()
     
+    let models = [BmmNinameViewModel(niName: "xxx"),
+                  BmmBaseViewModel(),
+                  BmmCalendarViewModel(calendar: "2016/12/6", title: "阳历"),
+                  BmmCalendarViewModel(calendar: "丙申年冬月初八", title: "阴历"),
+                  BmmAlertViewModel(),
+                  BmmAlarmViewModel(alarmDate: Date()),
+                  BmmRemarkViewModel(remark: "XXXXXXXXXXX")]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,15 +68,14 @@ extension BmmDetailTableViewController {
 extension BmmDetailTableViewController {
     fileprivate func RxMethod() {
         Observable
-            .combineLatest(addStatus.asObservable(), alertStatus.asObservable()) {
-                ($0, $1)
-            }
-            .shareReplay(1)
+            .of(addStatus.asObservable(), alertStatus.asObservable())
+            .merge()
             .subscribe(onNext: { [weak self] _ in
                 self?.tableView.beginUpdates()
                 self?.tableView.endUpdates()
             })
             .addDisposableTo(disposeBag)
+
     }
 }
 
@@ -75,11 +83,14 @@ extension BmmDetailTableViewController {
 extension BmmDetailTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return models.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = BmmBaseCell().cellWithIndexPath(tv: tableView, ip: indexPath)
+        let cvm = models[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: cvm.identifier!, for: indexPath)
+        (cell as? BmmBaseCell)?.viewModel.value = cvm
+        
         if cell is BmmAlertCell {
             let alertCell = cell as? BmmAlertCell
             alertCell?.delegate = self

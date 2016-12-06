@@ -7,22 +7,13 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class BmmBaseCell: UITableViewCell {
     
-    private let cellIds: [String] = ["BmmNinameCellId",
-                                     "BmmAddCellId",
-                                     "BmmCalendarCellId",
-                                     "BmmCalendarCellId",
-                                     "BmmAlertCellId",
-                                     "BmmAlarmCellId",
-                                     "BmmRemarkCellId"]
-    
-    func cellWithIndexPath(tv: UITableView, ip: IndexPath) -> UITableViewCell {
-        return tv.dequeueReusableCell(withIdentifier: cellIds[ip.row], for: ip)
-        
-    }
-    
+    var viewModel: Variable<BmmBaseViewModel> = Variable(BmmBaseViewModel())
+    let disposeBag = DisposeBag()
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -10,11 +10,24 @@ import UIKit
 
 class BmmCalendarCell: BmmBaseCell {
 
-    @IBOutlet weak var CalendarLabel: UILabel!
+    @IBOutlet weak var calendarLabel: UILabel!
     @IBOutlet weak var dateTexiField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        viewModel
+            .asObservable()
+            .map({
+                (($0 as? BmmCalendarViewModel)?.calendar,
+                 ($0 as? BmmCalendarViewModel)?.title)
+            })
+            .subscribe(onNext: { [weak self] (cvm) in
+                self?.dateTexiField.text = cvm.0
+                self?.calendarLabel.text = cvm.1
+            })
+            .addDisposableTo(disposeBag)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

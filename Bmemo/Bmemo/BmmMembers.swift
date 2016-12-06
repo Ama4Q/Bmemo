@@ -9,27 +9,28 @@
 import Foundation
 import ObjectMapper
 
-
-struct BmmMembers: Mappable {
+class BmmMembers: Mappable {
     var photo: Data?
     var niName: String?
-    var alarmDatre: Date?
+    var remark: String?
+    var alarmDate: Date?
     var gregorianCalendar: String?
     var lunarCalendar: String?
     
-    var gregorian: String?
     var lunar: String?
+    var gregorian: String?
     
-    init?(map: Map) {}
+    required init?(map: Map) {}
     
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         photo <- map["photo"]
         niName <- map["niName"]
-        alarmDatre <- map["alarmDatre"]
-        gregorianCalendar <- map["gregorianCalendar"]
+        remark <- map["remark"]
+        alarmDate <- map["alarmDate"]
         lunarCalendar <- map["lunarCalendar"]
+        gregorianCalendar <- map["gregorianCalendar"]
         
-        gregorian <- map["gregorian"]
         lunar <- map["lunar"]
+        gregorian <- map["gregorian"]
     }
 }
