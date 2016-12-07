@@ -66,8 +66,10 @@ extension BmmMainTableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let detailVC = segue.destination as! BmmDetailTableViewController
-        detailVC.member = dataSource?.value[(sender as? UIButton)!.tag]
+        if segue.identifier == "showId" {
+            let detailVC = segue.destination as! BmmDetailTableViewController
+            detailVC.member = dataSource?.value[(sender as? UIButton)!.tag]
+        }
     }
 }
 

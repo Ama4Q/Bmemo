@@ -18,23 +18,21 @@ extension CGFloat {
         case 1:
             break
         case 2:
-            fallthrough
-        case 3:
             if aS.rawValue == "open" {
-                self = 70
+                self = 65
             } else {
                 self = 0
             }
-        case 4:
+        case 3:
             break
-        case 5:
+        case 4:
             if alS.rawValue == "open" {
                 self = 70
             } else {
                 self = 0
             }
         default:
-            self = 100
+            self = 60
         }
     }
 }

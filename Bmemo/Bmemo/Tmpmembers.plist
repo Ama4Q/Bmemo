@@ -7,12 +7,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -25,12 +21,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -43,12 +35,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -61,12 +49,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -79,12 +63,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -97,12 +77,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -115,12 +91,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -133,12 +105,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -151,12 +119,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -169,12 +133,8 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>
@@ -187,12 +147,22 @@
 		<data>bm8gcGhvdG9z</data>
 		<key>niName</key>
 		<string>Ama.Qiu</string>
-		<key>gregorian</key>
-		<string>阳历</string>
 		<key>gregorianCalendar</key>
 		<string>2016/12/07</string>
-		<key>lunar</key>
-		<string>阴历</string>
+		<key>lunarCalendar</key>
+		<string>丙申年冬月初九</string>
+		<key>alarmDate</key>
+		<date>2016-12-07T09:19:23Z</date>
+		<key>remark</key>
+		<string>Happy birthday! 🎂🎂🎂</string>
+	</dict>
+	<dict>
+		<key>photo</key>
+		<data>bm8gcGhvdG9z</data>
+		<key>niName</key>
+		<string>Ama.Qiu</string>
+		<key>gregorianCalendar</key>
+		<string>2016/12/07</string>
 		<key>lunarCalendar</key>
 		<string>丙申年冬月初九</string>
 		<key>alarmDate</key>

@@ -10,8 +10,8 @@ import UIKit
 
 class BmmCalendarCell: BmmBaseCell {
 
-    @IBOutlet weak var calendarLabel: UILabel!
-    @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var gCalendarLabel: UILabel!
+    @IBOutlet weak var lCalendarLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,12 +20,11 @@ class BmmCalendarCell: BmmBaseCell {
         viewModel
             .asObservable()
             .map({
-                (($0 as? BmmCalendarViewModel)?.calendar,
-                 ($0 as? BmmCalendarViewModel)?.title)
+                (($0 as? BmmCalendarViewModel)?.gCalendar, ($0 as? BmmCalendarViewModel)?.lCalendar)
             })
             .subscribe(onNext: { [weak self] (cvm) in
-                self?.dateTextField.text = cvm.0
-                self?.calendarLabel.text = cvm.1
+                self?.gCalendarLabel.text = cvm.0
+                self?.lCalendarLabel.text = cvm.1
             })
             .addDisposableTo(disposeBag)
     }

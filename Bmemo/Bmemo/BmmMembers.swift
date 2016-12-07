@@ -17,9 +17,6 @@ class BmmMembers: Mappable {
     var gregorianCalendar: String?
     var lunarCalendar: String?
     
-    var lunar: String?
-    var gregorian: String?
-    
     required init?(map: Map) {}
     
     func mapping(map: Map) {
@@ -29,8 +26,5 @@ class BmmMembers: Mappable {
         alarmDate <- map["alarmDate"]
         lunarCalendar <- map["lunarCalendar"]
         gregorianCalendar <- map["gregorianCalendar"]
-        
-        lunar <- map["lunar"]
-        gregorian <- map["gregorian"]
     }
 }

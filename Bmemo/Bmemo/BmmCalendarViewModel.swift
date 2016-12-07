@@ -10,16 +10,16 @@ import Foundation
 
 class BmmCalendarViewModel: BmmBaseViewModel {
 
-    var calendar: String?
-    var title: String?
+    var gCalendar: String?
+    var lCalendar: String?
     
     override var identifier: String? {
         return "BmmCalendarCellId"
     }
     
-    init(calendar: String?, title: String?) {
+    init(gCalendar: String?, lCalendar: String?) {
         super.init()
-        self.calendar = calendar
-        self.title = title
+        self.gCalendar = gCalendar
+        self.lCalendar = lCalendar
     }
 }

@@ -15,10 +15,24 @@ protocol BmmAlertCellDelegate {
 class BmmAlertCell: BmmBaseCell {
 
     var delegate: BmmAlertCellDelegate?
+    @IBOutlet weak var alertSwitch: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        viewModel
+            .asObservable()
+            .map({ vm -> Bool in
+                guard let on = (vm as? BmmAlertViewModel)?.on else {
+                    return false
+                }
+                return on
+            })
+            .subscribe(onNext: { [weak self] on in
+                self?.alertSwitch.isOn = on
+            })
+            .addDisposableTo(disposeBag)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

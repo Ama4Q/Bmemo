@@ -35,10 +35,6 @@ class BmmDetailTableViewController: UITableViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
 
 // MARK: - UI
@@ -60,16 +56,8 @@ extension BmmDetailTableViewController {
 // MARK: - RxSwift method
 extension BmmDetailTableViewController {
     fileprivate func RxMethod() {
-        // MARK: - cell status
-        Observable
-            .of(addStatus.asObservable(), alertStatus.asObservable())
-            .merge()
-            .subscribe(onNext: { [weak self] _ in
-                self?.tableView.beginUpdates()
-                self?.tableView.endUpdates()
-            })
-            .addDisposableTo(disposeBag)
         
+        //MARK: - dataSource Observer
         Observable
             .just(member)
             .asObservable()
@@ -77,11 +65,38 @@ extension BmmDetailTableViewController {
                 self?.models =
                     [BmmNinameViewModel(niName: ms?.niName),
                      BmmBaseViewModel(),
-                     BmmCalendarViewModel(calendar: ms?.gregorianCalendar, title: ms?.gregorian),
-                     BmmCalendarViewModel(calendar: ms?.lunarCalendar, title: ms?.lunar),
-                     BmmAlertViewModel(),
+                     BmmCalendarViewModel(gCalendar: ms?.gregorianCalendar, lCalendar: ms?.lunarCalendar),
+                     BmmAlertViewModel(alarmDate: ms?.alarmDate),
                      BmmAlarmViewModel(alarmDate: ms?.alarmDate),
                      BmmRemarkViewModel(remark: ms?.remark)]
+                
+                if ms?.gregorianCalendar != nil {
+                    self?.addStatus.value = .open
+                }
+                
+                if ms?.alarmDate != nil {
+                    self?.alertStatus.value = .open
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
+        //MARK: - back Item Observer
+        Observable
+            .just(presentingViewController)
+            .asObservable()
+            .filter({
+                $0 != nil
+            })
+            .subscribe(onNext: { [weak self] _ in
+                let backItem = UIBarButtonItem(title: NSLocalizedString("取消", comment: ""), style: .done, target: nil, action: nil)
+                self?.navigationItem.leftBarButtonItem = backItem
+                backItem
+                    .rx
+                    .tap
+                    .subscribe(onNext: { [weak self] _ in
+                        self?.dismiss(animated: true, completion: nil)
+                    })
+                    .addDisposableTo((self!.disposeBag))
             })
             .addDisposableTo(disposeBag)
     }
@@ -115,13 +130,23 @@ extension BmmDetailTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let selectCell = tableView.cellForRow(at: indexPath)
-        
-        if selectCell is BmmAlarmCell {
+        switch indexPath.row {
+        case 1:
+            break
             
-        } else {
-            // code test
-            addStatus.value = .open
+        case 2:
+            break
+            
+        case 4:
+            if addStatus.value != .open {
+                // code test
+                addStatus.value = .open
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            }
+        
+        default:
+            break
         }
     }
 }
@@ -130,6 +155,8 @@ extension BmmDetailTableViewController {
 extension BmmDetailTableViewController: BmmAlertCellDelegate {
     func isSwitch(on: Bool, alertCell: BmmAlertCell) {
         alertStatus.value = (on == true) ? .open : .close
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
 }
 

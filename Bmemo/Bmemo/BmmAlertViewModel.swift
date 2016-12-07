@@ -12,4 +12,18 @@ class BmmAlertViewModel: BmmBaseViewModel {
     override var identifier: String? {
         return "BmmAlertCellId"
     }
+    
+    var on: Bool = false
+    
+    
+    init(alarmDate: Date?) {
+        super.init()
+        
+        guard alarmDate != nil else {
+            on = false
+            return
+        }
+        
+        on = true
+    }
 }
