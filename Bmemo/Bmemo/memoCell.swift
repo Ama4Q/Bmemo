@@ -22,6 +22,7 @@ class memoCell: BmmTableViewCell {
     @IBOutlet weak var detGregorianCalendar: UILabel!
     @IBOutlet weak var detlunarCalendar: UILabel!
     
+    @IBOutlet weak var niNameBtn: UIButton!
     
     var photo: UIImage? = nil {
         didSet {
@@ -36,9 +37,9 @@ class memoCell: BmmTableViewCell {
         }
     }
     
-    var aDate: String? = nil {
+    var aDate: Date? = nil {
         didSet {
-            alertDate.text = aDate
+            alertDate.text = String(describing: aDate!)
         }
     }
     
@@ -66,6 +67,16 @@ class memoCell: BmmTableViewCell {
     override func animationDuration(_ itemIndex: NSInteger, type: BmmTableViewCell.AnimationType) -> TimeInterval {
         let durations = [0.26, 0.2, 0.2]
         return durations[itemIndex]
+    }
+    
+    func dataFromCell(members: BmmMembers, idx: Int) {
+        photo = UIImage(named: "photo")
+        nname = members.niName
+        aDate = members.alarmDate
+        dCalendar = members.gregorianCalendar
+        lCalendar = members.lunarCalendar
+        
+        niNameBtn.tag = idx
     }
     
 }

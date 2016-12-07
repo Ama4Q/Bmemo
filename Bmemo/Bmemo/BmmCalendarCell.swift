@@ -11,7 +11,7 @@ import UIKit
 class BmmCalendarCell: BmmBaseCell {
 
     @IBOutlet weak var calendarLabel: UILabel!
-    @IBOutlet weak var dateTexiField: UITextField!
+    @IBOutlet weak var dateTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +24,7 @@ class BmmCalendarCell: BmmBaseCell {
                  ($0 as? BmmCalendarViewModel)?.title)
             })
             .subscribe(onNext: { [weak self] (cvm) in
-                self?.dateTexiField.text = cvm.0
+                self?.dateTextField.text = cvm.0
                 self?.calendarLabel.text = cvm.1
             })
             .addDisposableTo(disposeBag)

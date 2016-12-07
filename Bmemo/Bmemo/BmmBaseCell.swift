@@ -14,6 +14,7 @@ class BmmBaseCell: UITableViewCell {
     
     var viewModel: Variable<BmmBaseViewModel> = Variable(BmmBaseViewModel())
     let disposeBag = DisposeBag()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

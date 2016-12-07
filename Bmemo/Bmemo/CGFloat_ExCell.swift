@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - cell height extension
 extension CGFloat {
-    init(index: Int, cS: ExCell, aS: ExCell) {
+    init(index: Int, aS: ExCell, alS: ExCell) {
         self = 44
         switch index {
         case 0:
@@ -20,7 +20,7 @@ extension CGFloat {
         case 2:
             fallthrough
         case 3:
-            if cS.rawValue == "open" {
+            if aS.rawValue == "open" {
                 self = 70
             } else {
                 self = 0
@@ -28,7 +28,7 @@ extension CGFloat {
         case 4:
             break
         case 5:
-            if aS.rawValue == "open" {
+            if alS.rawValue == "open" {
                 self = 70
             } else {
                 self = 0

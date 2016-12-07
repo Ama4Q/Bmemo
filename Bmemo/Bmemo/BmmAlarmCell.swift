@@ -18,13 +18,13 @@ class BmmAlarmCell: BmmBaseCell {
         
         viewModel
             .asObservable()
-            .map({
-                ($0 as? BmmAlarmViewModel)?.alarmDate
+            .map({ vm in
+                guard let alarmDate = (vm as? BmmAlarmViewModel)?.alarmDate else {
+                    return String()
+                }
+                return String(describing: alarmDate)
             })
-            .subscribe(onNext: { [weak self] (alarmDate) in
-                self?.alarmNameLabel.text = nil
-                self?.alarmDateLabel.text = String(describing: alarmDate)
-            })
+            .bindTo(alarmDateLabel.rx.text)
             .addDisposableTo(disposeBag)
     }
 

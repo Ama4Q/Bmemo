@@ -20,17 +20,10 @@ class BmmDetailTableViewController: UITableViewController {
 
     fileprivate lazy var alertStatus: Variable<ExCell> = Variable(.close)
     fileprivate lazy var addStatus: Variable<ExCell> = Variable(.close)
+    fileprivate var models: [BmmBaseViewModel]?
     
     let disposeBag = DisposeBag()
-    
-    let models = [BmmNinameViewModel(niName: "xxx"),
-                  BmmBaseViewModel(),
-                  BmmCalendarViewModel(calendar: "2016/12/6", title: "阳历"),
-                  BmmCalendarViewModel(calendar: "丙申年冬月初八", title: "阴历"),
-                  BmmAlertViewModel(),
-                  BmmAlarmViewModel(alarmDate: Date()),
-                  BmmRemarkViewModel(remark: "XXXXXXXXXXX")]
-    
+    var member: BmmMembers?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +60,7 @@ extension BmmDetailTableViewController {
 // MARK: - RxSwift method
 extension BmmDetailTableViewController {
     fileprivate func RxMethod() {
+        // MARK: - cell status
         Observable
             .of(addStatus.asObservable(), alertStatus.asObservable())
             .merge()
@@ -75,7 +69,21 @@ extension BmmDetailTableViewController {
                 self?.tableView.endUpdates()
             })
             .addDisposableTo(disposeBag)
-
+        
+        Observable
+            .just(member)
+            .asObservable()
+            .subscribe(onNext: { [weak self] ms in
+                self?.models =
+                    [BmmNinameViewModel(niName: ms?.niName),
+                     BmmBaseViewModel(),
+                     BmmCalendarViewModel(calendar: ms?.gregorianCalendar, title: ms?.gregorian),
+                     BmmCalendarViewModel(calendar: ms?.lunarCalendar, title: ms?.lunar),
+                     BmmAlertViewModel(),
+                     BmmAlarmViewModel(alarmDate: ms?.alarmDate),
+                     BmmRemarkViewModel(remark: ms?.remark)]
+            })
+            .addDisposableTo(disposeBag)
     }
 }
 
@@ -83,13 +91,13 @@ extension BmmDetailTableViewController {
 extension BmmDetailTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.count
+        return models?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cvm = models[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cvm.identifier!, for: indexPath)
-        (cell as? BmmBaseCell)?.viewModel.value = cvm
+        let cvm = models?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: cvm!.identifier!, for: indexPath)
+        (cell as? BmmBaseCell)?.viewModel.value = cvm!
         
         if cell is BmmAlertCell {
             let alertCell = cell as? BmmAlertCell
@@ -100,7 +108,7 @@ extension BmmDetailTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return CGFloat(index: indexPath.row, cS: addStatus.value, aS: alertStatus.value)
+        return CGFloat(index: indexPath.row, aS: addStatus.value, alS: alertStatus.value)
     }
     
     
