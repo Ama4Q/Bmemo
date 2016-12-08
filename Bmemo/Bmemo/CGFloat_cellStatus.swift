@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - cell height extension
 extension CGFloat {
-    init(index: Int, aS: ExCell, alS: ExCell) {
+    init(index: Int, aS: cellStatus, alS: cellStatus) {
         self = 44
         switch index {
         case 0:

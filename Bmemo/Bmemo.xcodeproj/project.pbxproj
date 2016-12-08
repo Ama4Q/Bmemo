@@ -27,7 +27,7 @@
 		8160ED361DE59C2C0030CC82 /* BmmMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */; };
 		817AFAEF1DF5568500BA98DF /* BmmBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */; };
 		817AFAF71DF5738300BA98DF /* BmmAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */; };
-		817AFAF91DF579FB00BA98DF /* CGFloat_ExCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAF81DF579FB00BA98DF /* CGFloat_ExCell.swift */; };
+		817AFAF91DF579FB00BA98DF /* CGFloat_cellStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAF81DF579FB00BA98DF /* CGFloat_cellStatus.swift */; };
 		81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD824D1DE7F53D0017A3C6 /* UIView_Bmm.swift */; };
 		81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD824F1DE7FC570017A3C6 /* UIimage_Bmm.swift */; };
 		81CD82521DE806BA0017A3C6 /* UIColor_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD82511DE806BA0017A3C6 /* UIColor_Bmm.swift */; };
@@ -64,7 +64,7 @@
 		8160ED351DE59C2C0030CC82 /* BmmMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmMainTableViewController.swift; sourceTree = "<group>"; };
 		817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmBaseCell.swift; sourceTree = "<group>"; };
 		817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmAlertCell.swift; sourceTree = "<group>"; };
-		817AFAF81DF579FB00BA98DF /* CGFloat_ExCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat_ExCell.swift; sourceTree = "<group>"; };
+		817AFAF81DF579FB00BA98DF /* CGFloat_cellStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat_cellStatus.swift; sourceTree = "<group>"; };
 		81CD824D1DE7F53D0017A3C6 /* UIView_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Bmm.swift; sourceTree = "<group>"; };
 		81CD824F1DE7FC570017A3C6 /* UIimage_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIimage_Bmm.swift; sourceTree = "<group>"; };
 		81CD82511DE806BA0017A3C6 /* UIColor_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Bmm.swift; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				81021C421DF66E180065C859 /* models */,
-				817AFAF81DF579FB00BA98DF /* CGFloat_ExCell.swift */,
+				817AFAF81DF579FB00BA98DF /* CGFloat_cellStatus.swift */,
 				813F23001DF81B1600AF24A8 /* ParsingViewModel.swift */,
 			);
 			name = bll;
@@ -363,7 +363,7 @@
 				813F23011DF81B1600AF24A8 /* ParsingViewModel.swift in Sources */,
 				81536D051DF1C17D0026BC65 /* BmmAlarmCell.swift in Sources */,
 				81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */,
-				817AFAF91DF579FB00BA98DF /* CGFloat_ExCell.swift in Sources */,
+				817AFAF91DF579FB00BA98DF /* CGFloat_cellStatus.swift in Sources */,
 				813F79201DF7083F00F37A03 /* BmmRemarkViewModel.swift in Sources */,
 				81536D031DF1C1460026BC65 /* BmmCalendarCell.swift in Sources */,
 				81F2B75B1DE6DB46003E0D4C /* memoCell.swift in Sources */,

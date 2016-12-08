@@ -11,15 +11,15 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-public enum ExCell: String {
+public enum cellStatus: String {
     case close = "close"
     case open = "open"
 }
 
 class BmmDetailTableViewController: UITableViewController {
 
-    fileprivate lazy var alertStatus: Variable<ExCell> = Variable(.close)
-    fileprivate lazy var addStatus: Variable<ExCell> = Variable(.close)
+    fileprivate lazy var alertStatus: Variable<cellStatus> = Variable(.close)
+    fileprivate lazy var addStatus: Variable<cellStatus> = Variable(.close)
     fileprivate var models: [BmmBaseViewModel]?
     
     let disposeBag = DisposeBag()
@@ -33,6 +33,10 @@ class BmmDetailTableViewController: UITableViewController {
         // Rx_observe
         RxMethod()
         
+    }
+    
+    deinit {
+        debugPrint("BmmDetailTableViewController--deinit")
     }
 
 }
@@ -48,7 +52,7 @@ extension BmmDetailTableViewController {
         headerView.reloadSizeWithScrollView(scrollView: tableView)
         
         headerView.handleClickActionWithClosure {
-            print("aaa")
+            debugPrint("aaa")
         }
     }
 }
@@ -93,7 +97,7 @@ extension BmmDetailTableViewController {
                 backItem
                     .rx
                     .tap
-                    .subscribe(onNext: { [weak self] _ in
+                    .subscribe(onNext: { _ in
                         self?.dismiss(animated: true, completion: nil)
                     })
                     .addDisposableTo((self!.disposeBag))
@@ -115,8 +119,7 @@ extension BmmDetailTableViewController {
         (cell as? BmmBaseCell)?.viewModel.value = cvm!
         
         if cell is BmmAlertCell {
-            let alertCell = cell as? BmmAlertCell
-            alertCell?.delegate = self
+            (cell as? BmmAlertCell)?.delegate = self
         }
         return cell
     }
@@ -132,18 +135,18 @@ extension BmmDetailTableViewController {
         
         switch indexPath.row {
         case 1:
-            break
-            
-        case 2:
-            break
-            
-        case 4:
             if addStatus.value != .open {
                 // code test
                 addStatus.value = .open
                 tableView.beginUpdates()
                 tableView.endUpdates()
             }
+            
+        case 2:
+            break
+            
+        case 4:
+            break
         
         default:
             break

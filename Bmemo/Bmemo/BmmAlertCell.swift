@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol BmmAlertCellDelegate {
+protocol BmmAlertCellDelegate: class {
     func isSwitch(on: Bool, alertCell: BmmAlertCell)
 }
 
 class BmmAlertCell: BmmBaseCell {
 
-    var delegate: BmmAlertCellDelegate?
+    weak var delegate: BmmAlertCellDelegate?
     @IBOutlet weak var alertSwitch: UISwitch!
     
     override func awakeFromNib() {
