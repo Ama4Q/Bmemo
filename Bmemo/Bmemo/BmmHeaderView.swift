@@ -20,13 +20,13 @@ open class BmmHeaderView: UIView {
     fileprivate var clickHeaderClosure: ClickHeaderClosure?
     
     
-    open var photo: UIImage? = nil {
+    open var photo: UIImage? {
         willSet {
             headerBtn?.setBackgroundImage(newValue, for: .normal)
             headerBtn?.setBackgroundImage(newValue, for: .highlighted)
         }
     }
-    open var boardColor: UIColor? = nil {
+    open var boardColor: UIColor? {
         willSet {
             headerBtn?.layer.borderColor = newValue?.cgColor
         }
