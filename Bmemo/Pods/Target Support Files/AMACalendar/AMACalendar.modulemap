@@ -1,0 +1,6 @@
+framework module AMACalendar {
+  umbrella header "AMACalendar-umbrella.h"
+
+  export *
+  module * { export * }
+}

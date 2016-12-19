@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double RxSwiftVersionNumber;
-FOUNDATION_EXPORT const unsigned char RxSwiftVersionString[];
+FOUNDATION_EXPORT double AMACalendarVersionNumber;
+FOUNDATION_EXPORT const unsigned char AMACalendarVersionString[];
 
