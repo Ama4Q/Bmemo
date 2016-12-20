@@ -31,6 +31,8 @@ extension CGFloat {
             } else {
                 self = 0
             }
+        case 5:
+            self = 150
         default:
             self = 60
         }

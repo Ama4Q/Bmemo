@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
-import AMACalendar
 
 public enum cellStatus: String {
     case close = "close"
@@ -33,8 +32,6 @@ class BmmDetailTableViewController: UITableViewController {
         UI()
         // Rx_observe
         RxMethod()
-        
-        let a = calendarView()
         
     }
     
@@ -75,6 +72,7 @@ extension BmmDetailTableViewController {
                      BmmCalendarViewModel(gCalendar: ms?.gregorianCalendar, lCalendar: ms?.lunarCalendar),
                      BmmAlertViewModel(alarmDate: ms?.alarmDate),
                      BmmAlarmViewModel(alarmDate: ms?.alarmDate),
+                     BmmPickerViewModel(alarmDate: ms?.alarmDate),
                      BmmRemarkViewModel(remark: ms?.remark)]
                 
                 if ms?.gregorianCalendar != nil {
@@ -144,10 +142,6 @@ extension BmmDetailTableViewController {
                 tableView.beginUpdates()
                 tableView.endUpdates()
             }
-            
-        case 2:
-            break
-            
             
         case 4:
             break

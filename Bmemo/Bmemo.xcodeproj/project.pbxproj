@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		81021C441DF66E590065C859 /* BmmMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81021C431DF66E590065C859 /* BmmMembers.swift */; };
+		811DC79F1E090088006B64A4 /* BmmCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DC79E1E090088006B64A4 /* BmmCalendarViewController.swift */; };
+		811DC7A11E092A4D006B64A4 /* BmmPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DC7A01E092A4D006B64A4 /* BmmPickerCell.swift */; };
+		811DC7A31E092A9F006B64A4 /* BmmPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811DC7A21E092A9F006B64A4 /* BmmPickerViewModel.swift */; };
 		813F22FF1DF80AB700AF24A8 /* Tmpmembers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 813F22FE1DF80AB700AF24A8 /* Tmpmembers.plist */; };
 		813F23011DF81B1600AF24A8 /* ParsingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F23001DF81B1600AF24A8 /* ParsingViewModel.swift */; };
 		813F79161DF6FB6E00F37A03 /* BmmBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F79151DF6FB6E00F37A03 /* BmmBaseViewModel.swift */; };
@@ -43,6 +46,9 @@
 		0D20E4AADB2F21A389E99A51 /* Pods-Bmemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bmemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bmemo/Pods-Bmemo.debug.xcconfig"; sourceTree = "<group>"; };
 		26656880E43DD4EDAF52701D /* Pods-Bmemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bmemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bmemo/Pods-Bmemo.release.xcconfig"; sourceTree = "<group>"; };
 		81021C431DF66E590065C859 /* BmmMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmMembers.swift; sourceTree = "<group>"; };
+		811DC79E1E090088006B64A4 /* BmmCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmCalendarViewController.swift; sourceTree = "<group>"; };
+		811DC7A01E092A4D006B64A4 /* BmmPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmPickerCell.swift; sourceTree = "<group>"; };
+		811DC7A21E092A9F006B64A4 /* BmmPickerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmPickerViewModel.swift; sourceTree = "<group>"; };
 		813F22FE1DF80AB700AF24A8 /* Tmpmembers.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tmpmembers.plist; sourceTree = "<group>"; };
 		813F23001DF81B1600AF24A8 /* ParsingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParsingViewModel.swift; sourceTree = "<group>"; };
 		813F79151DF6FB6E00F37A03 /* BmmBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmBaseViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 				813F791B1DF7071700F37A03 /* BmmAlertViewModel.swift */,
 				813F791D1DF707A200F37A03 /* BmmAlarmViewModel.swift */,
 				813F791F1DF7083F00F37A03 /* BmmRemarkViewModel.swift */,
+				811DC7A21E092A9F006B64A4 /* BmmPickerViewModel.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -133,6 +140,14 @@
 				81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		811DC79D1E09006F006B64A4 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				811DC79E1E090088006B64A4 /* BmmCalendarViewController.swift */,
+			);
+			name = Calendar;
 			sourceTree = "<group>";
 		};
 		8160ED171DE591BE0030CC82 = {
@@ -197,6 +212,7 @@
 				81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */,
 				81536D061DF1C1E90026BC65 /* BmmRemarkCell.swift */,
 				817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */,
+				811DC7A01E092A4D006B64A4 /* BmmPickerCell.swift */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -214,6 +230,7 @@
 		817AFAF51DF5710700BA98DF /* Ctrl */ = {
 			isa = PBXGroup;
 			children = (
+				811DC79D1E09006F006B64A4 /* Calendar */,
 				810711DC1DEDBB31003D8FD1 /* Detail */,
 				810711DB1DEDBB1B003D8FD1 /* Main */,
 			);
@@ -369,12 +386,15 @@
 				81F2B75B1DE6DB46003E0D4C /* memoCell.swift in Sources */,
 				817AFAEF1DF5568500BA98DF /* BmmBaseCell.swift in Sources */,
 				81536D011DF1C1100026BC65 /* BmmNinameCell.swift in Sources */,
+				811DC7A31E092A9F006B64A4 /* BmmPickerViewModel.swift in Sources */,
 				81EBA09A1DED8432003FBF21 /* BmmDetailTableViewController.swift in Sources */,
+				811DC7A11E092A4D006B64A4 /* BmmPickerCell.swift in Sources */,
 				813F79161DF6FB6E00F37A03 /* BmmBaseViewModel.swift in Sources */,
 				813F791A1DF7068800F37A03 /* BmmCalendarViewModel.swift in Sources */,
 				81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */,
 				81EBA0981DED7198003FBF21 /* BmmHeaderView.swift in Sources */,
 				81CD82521DE806BA0017A3C6 /* UIColor_Bmm.swift in Sources */,
+				811DC79F1E090088006B64A4 /* BmmCalendarViewController.swift in Sources */,
 				81F2B7591DE68FCD003E0D4C /* BmmRotatedView.swift in Sources */,
 				813F791C1DF7071700F37A03 /* BmmAlertViewModel.swift in Sources */,
 				81F2B7571DE68E05003E0D4C /* BmmTableViewCell.swift in Sources */,
