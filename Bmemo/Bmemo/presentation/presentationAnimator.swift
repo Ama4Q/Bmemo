@@ -44,17 +44,18 @@ extension presentationAnimator: UIViewControllerAnimatedTransitioning {
         let toView = context.view(forKey: .to)!
         context.containerView.addSubview(toView)
         
+        presentation?.coverView.alpha = 0
         toView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         // default 0.5, 0.5
         // toView.layer.position = CGPoint(x: 0.5, y: 0.5)
         
         UIView.animate(withDuration: transitionDuration(using: context),
                               delay: 0,
-             usingSpringWithDamping: 0.6,
+             usingSpringWithDamping: 0.7,
               initialSpringVelocity: 0,
                             options: .curveEaseOut,
                          animations: {
-                            
+                            self.presentation?.coverView.alpha = 1
                             toView.transform = CGAffineTransform.identity
         }, completion: { _ in
             
@@ -66,7 +67,7 @@ extension presentationAnimator: UIViewControllerAnimatedTransitioning {
     fileprivate func dismissedAnimation(forTransitionContext context: UIViewControllerContextTransitioning) {
         let fromView = context.view(forKey: .from)
         
-        UIView.animate(withDuration: 0.3,
+        UIView.animate(withDuration: transitionDuration(using: context),
                          animations: {
                             fromView?.alpha = 0
                             self.presentation?.coverView.alpha = 0
@@ -81,7 +82,7 @@ extension presentationAnimator: UIViewControllerAnimatedTransitioning {
     
     /// Animated duration
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.5
+        return 0.3
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

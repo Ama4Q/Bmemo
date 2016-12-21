@@ -1,5 +1,5 @@
 PODS:
-  - AMACalendar (0.0.1)
+  - AMACalendar (0.0.2)
   - ObjectMapper (2.2.1)
   - RxCocoa (3.0.1):
     - RxSwift (~> 3.0)
@@ -9,19 +9,19 @@ PODS:
   - RxSwift (3.0.1)
 
 DEPENDENCIES:
-  - AMACalendar (~> 0.0.1)
+  - AMACalendar (~> 0.0.2)
   - ObjectMapper (~> 2.2.1)
   - RxCocoa (~> 3.0)
   - RxDataSources (~> 1.0.0)
   - RxSwift (~> 3.0)
 
 SPEC CHECKSUMS:
-  AMACalendar: 6928c291d542f81df9ab64b657333add62927e1c
+  AMACalendar: a634074350b5e42a25d39c4c5dc5a8f1c20627ff
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxDataSources: 824693e84d00781d0a5e5cedc1ff95ce9250aacd
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
 
-PODFILE CHECKSUM: 3bf069b7c1a36e7ca4706d26d3882695dd3595b9
+PODFILE CHECKSUM: 9f9e280e230ff867d1152274bd3c92c5a369bd68
 
 COCOAPODS: 1.2.0.beta.1

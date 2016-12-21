@@ -74,7 +74,7 @@ extension BmmDetailTableViewController {
             toViewController.modalPresentationStyle = .custom
             toViewController.transitioningDelegate = BmmDetailTableViewController.presention
             
-            BmmDetailTableViewController.presention.presentFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 30, height: 360)
+            BmmDetailTableViewController.presention.presentFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 20, height: 360)
             BmmDetailTableViewController.presention.presentCenter = view.center
         }
     }
