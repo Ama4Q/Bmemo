@@ -17,9 +17,9 @@ class BmmCalendarViewModel: BmmBaseViewModel {
         return "BmmCalendarCellId"
     }
     
-    init(gCalendar: String?, lCalendar: String?) {
+    init(gC: String?, lC: String?) {
         super.init()
-        self.gCalendar = gCalendar
-        self.lCalendar = lCalendar
+        gCalendar = gC
+        lCalendar = lC
     }
 }

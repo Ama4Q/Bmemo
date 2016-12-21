@@ -22,9 +22,21 @@ class BmmAlarmCell: BmmBaseCell {
                 guard let alarmDate = (vm as? BmmAlarmViewModel)?.alarmDate else {
                     return String()
                 }
-                return String(describing: alarmDate)
+                
+                let formatter = DateFormatter()
+                formatter.dateFormat = "YYYY/MM/dd HH:mm:ss"
+                return formatter.string(from: alarmDate)
             })
-            .bindTo(alarmDateLabel.rx.text)
+            .subscribe(onNext: { [weak self] (str) in
+                
+                UIView.transition(with: self!.alarmDateLabel,
+                                  duration: 0.3,
+                                  options: .transitionCrossDissolve,
+                                  animations: {
+                                    self?.alarmDateLabel.text = str
+                }, completion: nil)
+                
+            })
             .addDisposableTo(disposeBag)
     }
 

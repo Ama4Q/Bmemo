@@ -39,7 +39,9 @@ class memoCell: BmmTableViewCell {
     
     var aDate: Date? = nil {
         didSet {
-            alertDate.text = String(describing: aDate!)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+            alertDate.text = formatter.string(from: aDate!)
         }
     }
     

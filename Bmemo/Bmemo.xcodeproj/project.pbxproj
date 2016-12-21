@@ -31,6 +31,8 @@
 		817AFAEF1DF5568500BA98DF /* BmmBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */; };
 		817AFAF71DF5738300BA98DF /* BmmAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */; };
 		817AFAF91DF579FB00BA98DF /* CGFloat_cellStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817AFAF81DF579FB00BA98DF /* CGFloat_cellStatus.swift */; };
+		818D3D771E0A536200F013C9 /* presentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D3D761E0A536200F013C9 /* presentationAnimator.swift */; };
+		818D3D7A1E0A577E00F013C9 /* presentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818D3D791E0A577E00F013C9 /* presentationController.swift */; };
 		81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD824D1DE7F53D0017A3C6 /* UIView_Bmm.swift */; };
 		81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD824F1DE7FC570017A3C6 /* UIimage_Bmm.swift */; };
 		81CD82521DE806BA0017A3C6 /* UIColor_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD82511DE806BA0017A3C6 /* UIColor_Bmm.swift */; };
@@ -71,6 +73,8 @@
 		817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmBaseCell.swift; sourceTree = "<group>"; };
 		817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmAlertCell.swift; sourceTree = "<group>"; };
 		817AFAF81DF579FB00BA98DF /* CGFloat_cellStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat_cellStatus.swift; sourceTree = "<group>"; };
+		818D3D761E0A536200F013C9 /* presentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = presentationAnimator.swift; path = presentation/presentationAnimator.swift; sourceTree = "<group>"; };
+		818D3D791E0A577E00F013C9 /* presentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = presentationController.swift; path = presentation/presentationController.swift; sourceTree = "<group>"; };
 		81CD824D1DE7F53D0017A3C6 /* UIView_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Bmm.swift; sourceTree = "<group>"; };
 		81CD824F1DE7FC570017A3C6 /* UIimage_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIimage_Bmm.swift; sourceTree = "<group>"; };
 		81CD82511DE806BA0017A3C6 /* UIColor_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor_Bmm.swift; sourceTree = "<group>"; };
@@ -205,14 +209,8 @@
 		817AFAF31DF5703A00BA98DF /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
-				817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */,
-				81536D001DF1C1100026BC65 /* BmmNinameCell.swift */,
-				81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */,
-				81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */,
-				81536D061DF1C1E90026BC65 /* BmmRemarkCell.swift */,
-				817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */,
-				811DC7A01E092A4D006B64A4 /* BmmPickerCell.swift */,
+				818D3D741E0A52AC00F013C9 /* view */,
+				818D3D731E0A529A00F013C9 /* cell */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -220,6 +218,7 @@
 		817AFAF41DF5707600BA98DF /* bll */ = {
 			isa = PBXGroup;
 			children = (
+				818D3D751E0A52E600F013C9 /* presentation */,
 				81021C421DF66E180065C859 /* models */,
 				817AFAF81DF579FB00BA98DF /* CGFloat_cellStatus.swift */,
 				813F23001DF81B1600AF24A8 /* ParsingViewModel.swift */,
@@ -235,6 +234,37 @@
 				810711DB1DEDBB1B003D8FD1 /* Main */,
 			);
 			name = Ctrl;
+			sourceTree = "<group>";
+		};
+		818D3D731E0A529A00F013C9 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				817AFAEE1DF5568500BA98DF /* BmmBaseCell.swift */,
+				81536D001DF1C1100026BC65 /* BmmNinameCell.swift */,
+				81536D021DF1C1460026BC65 /* BmmCalendarCell.swift */,
+				81536D041DF1C17D0026BC65 /* BmmAlarmCell.swift */,
+				81536D061DF1C1E90026BC65 /* BmmRemarkCell.swift */,
+				817AFAF61DF5738300BA98DF /* BmmAlertCell.swift */,
+				811DC7A01E092A4D006B64A4 /* BmmPickerCell.swift */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		818D3D741E0A52AC00F013C9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		818D3D751E0A52E600F013C9 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				818D3D761E0A536200F013C9 /* presentationAnimator.swift */,
+				818D3D791E0A577E00F013C9 /* presentationController.swift */,
+			);
+			name = presentation;
 			sourceTree = "<group>";
 		};
 		81F2B7551DE68DF0003E0D4C /* Cell */ = {
@@ -394,6 +424,7 @@
 				81CD82501DE7FC570017A3C6 /* UIimage_Bmm.swift in Sources */,
 				81EBA0981DED7198003FBF21 /* BmmHeaderView.swift in Sources */,
 				81CD82521DE806BA0017A3C6 /* UIColor_Bmm.swift in Sources */,
+				818D3D771E0A536200F013C9 /* presentationAnimator.swift in Sources */,
 				811DC79F1E090088006B64A4 /* BmmCalendarViewController.swift in Sources */,
 				81F2B7591DE68FCD003E0D4C /* BmmRotatedView.swift in Sources */,
 				813F791C1DF7071700F37A03 /* BmmAlertViewModel.swift in Sources */,
@@ -401,6 +432,7 @@
 				81536D071DF1C1E90026BC65 /* BmmRemarkCell.swift in Sources */,
 				81021C441DF66E590065C859 /* BmmMembers.swift in Sources */,
 				813F791E1DF707A200F37A03 /* BmmAlarmViewModel.swift in Sources */,
+				818D3D7A1E0A577E00F013C9 /* presentationController.swift in Sources */,
 				8160ED241DE591BE0030CC82 /* AppDelegate.swift in Sources */,
 				813F79181DF6FE2F00F37A03 /* BmmNinameViewModel.swift in Sources */,
 			);

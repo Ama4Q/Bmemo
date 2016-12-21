@@ -10,19 +10,22 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol BmmPickerCellDelegate: class {
+    func pickerDateDidChanged(date: Date, cell: BmmPickerCell)
+}
 class BmmPickerCell: BmmBaseCell {
 
     @IBOutlet weak var datePicker: UIDatePicker!
+    weak var delegate: BmmPickerCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         
         datePicker
             .rx
             .date
-            .asObservable()
             .skip(1)
-            .subscribe(onNext: { (d) in
-                print(d)
+            .subscribe(onNext: { [weak self] (date) in
+                self?.delegate?.pickerDateDidChanged(date: date, cell: self!)
             })
             .addDisposableTo(disposeBag)
         
@@ -36,6 +39,9 @@ class BmmPickerCell: BmmBaseCell {
             })
             .bindTo(datePicker.rx.date)
             .addDisposableTo(disposeBag)
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
     }
 
 }

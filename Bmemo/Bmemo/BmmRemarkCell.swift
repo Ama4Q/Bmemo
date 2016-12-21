@@ -38,9 +38,7 @@ class BmmRemarkCell: BmmBaseCell {
             .shareReplay(1)
             .subscribe(onNext: { [weak self] c in
                 self?.remarkTextView.backgroundColor =
-                    (c! <= 0) ?
-                        self?.cColor :
-                        self?.wColor
+                    (c! <= 0) ? self?.cColor : self?.wColor
             })
             .addDisposableTo(disposeBag)
     }

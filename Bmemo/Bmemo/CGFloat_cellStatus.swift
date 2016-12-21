@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - cell height extension
 extension CGFloat {
-    init(index: Int, aS: cellStatus, alS: cellStatus) {
+    init(index: Int, aS: cellStatus, alS: cellStatus, pkS: cellStatus) {
         self = 44
         switch index {
         case 0:
@@ -32,7 +32,11 @@ extension CGFloat {
                 self = 0
             }
         case 5:
-            self = 150
+            if pkS.rawValue == "open" {
+                self = 150
+            } else {
+                self = 0
+            }
         default:
             self = 60
         }
