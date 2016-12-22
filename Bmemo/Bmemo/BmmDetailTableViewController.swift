@@ -187,7 +187,7 @@ extension BmmDetailTableViewController: BmmAlertCellDelegate {
     func isSwitch(on: Bool, alertCell: BmmAlertCell) {
         alertStatus = (on == true) ? .open : .close
         pickerStatus = .close
-        tableViewUpdates()
+//        tableViewUpdates()
     }
 }
 
