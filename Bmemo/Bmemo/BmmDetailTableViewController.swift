@@ -18,17 +18,35 @@ public enum cellStatus: String {
 
 class BmmDetailTableViewController: UITableViewController {
 
-    fileprivate lazy var addStatus: Variable<cellStatus> = Variable(.close)
-    fileprivate lazy var alertStatus: Variable<cellStatus> = Variable(.close)
-    fileprivate lazy var pickerStatus: Variable<cellStatus> = Variable(.close)
-    fileprivate lazy var models: Variable<[BmmBaseViewModel]> = Variable([])
+    fileprivate lazy var addStatus: cellStatus = .close
+    fileprivate lazy var alertStatus: cellStatus = .close
+    fileprivate lazy var pickerStatus: cellStatus = .close
+    fileprivate var models: [BmmBaseViewModel]?
     
     fileprivate static let presention = presentationAnimator { (_) in
         print("didtap...")
     }
     
     let disposeBag = DisposeBag()
-    var member: BmmMembers?
+    var member: BmmMembers? {
+        willSet {
+            models =
+                [BmmNinameViewModel(niName: newValue?.niName),
+                 BmmBaseViewModel(),
+                 BmmCalendarViewModel(gC: newValue?.gregorianCalendar, lC: newValue?.lunarCalendar),
+                 BmmAlertViewModel(alarmDate: newValue?.alarmDate),
+                 BmmAlarmViewModel(alarmDate: newValue?.alarmDate),
+                 BmmRemarkViewModel(remark: newValue?.remark)]
+            
+            if newValue?.gregorianCalendar != nil {
+                addStatus = .open
+            }
+            
+            if newValue?.alarmDate != nil {
+                alertStatus = .open
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,31 +102,6 @@ extension BmmDetailTableViewController {
 extension BmmDetailTableViewController {
     fileprivate func RxMethod() {
         
-        //MARK: - dataSource Observer
-        Observable
-            .just(member)
-            .asObservable()
-            .subscribe(onNext: { [weak self] ms in
-                
-                self?.models.value =
-                    [BmmNinameViewModel(niName: ms?.niName),
-                     BmmBaseViewModel(),
-                     BmmCalendarViewModel(gC: ms?.gregorianCalendar, lC: ms?.lunarCalendar),
-                     BmmAlertViewModel(alarmDate: ms?.alarmDate),
-                     BmmAlarmViewModel(alarmDate: ms?.alarmDate),
-                     BmmPickerViewModel(alarmDate: ms?.alarmDate),
-                     BmmRemarkViewModel(remark: ms?.remark)]
-                
-                if ms?.gregorianCalendar != nil {
-                    self?.addStatus.value = .open
-                }
-                
-                if ms?.alarmDate != nil {
-                    self?.alertStatus.value = .open
-                }
-            })
-            .addDisposableTo(disposeBag)
-        
         //MARK: - back Item Observer
         Observable
             .just(presentingViewController)
@@ -129,13 +122,6 @@ extension BmmDetailTableViewController {
             })
             .addDisposableTo(disposeBag)
         
-        models
-            .asObservable()
-            .skip(1)
-            .subscribe(onNext: { [weak self] (_) in
-                self?.tableView.reloadData()
-            })
-            .addDisposableTo(disposeBag)
     }
 }
 
@@ -143,11 +129,11 @@ extension BmmDetailTableViewController {
 extension BmmDetailTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return models.value.count 
+        return models?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cvm = models.value[indexPath.row]
+        let cvm = models![indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cvm.identifier!, for: indexPath)
         (cell as? BmmBaseCell)?.viewModel.value = cvm
         
@@ -164,7 +150,7 @@ extension BmmDetailTableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return CGFloat(index: indexPath.row, aS: addStatus.value, alS: alertStatus.value, pkS: pickerStatus.value)
+        return CGFloat(index: indexPath.row, aS: addStatus, alS: alertStatus, pkS: pickerStatus)
     }
     
     
@@ -173,15 +159,22 @@ extension BmmDetailTableViewController {
         
         switch indexPath.row {
         case 1:
-            if addStatus.value != .open {
+            if addStatus != .open {
                 // code test
-                addStatus.value = .open
+                addStatus = .open
                 tableViewUpdates()
             }
             
         case 4:
-            pickerStatus.value = (pickerStatus.value == .close) ? .open : .close
-            tableViewUpdates()
+            if pickerStatus == .close {
+                pickerStatus = .open
+                models?.insert(BmmPickerViewModel(alarmDate: (models?[4] as! BmmAlarmViewModel).alarmDate), at: 5)
+                tableView.insertItemsAtIndexPaths([IndexPath(row: 5, section: 0)], animationStyle: .middle)
+            } else {
+                pickerStatus = .close
+                models?.remove(at: 5)
+                tableView.deleteRows(at: [IndexPath(row: 5, section: 0)], with: .middle)
+            }
         
         default:
             break
@@ -192,8 +185,8 @@ extension BmmDetailTableViewController {
 // MARK: - BmmAlertCell cloure
 extension BmmDetailTableViewController: BmmAlertCellDelegate {
     func isSwitch(on: Bool, alertCell: BmmAlertCell) {
-        alertStatus.value = (on == true) ? .open : .close
-        pickerStatus.value = .close
+        alertStatus = (on == true) ? .open : .close
+        pickerStatus = .close
         tableViewUpdates()
     }
 }
@@ -203,11 +196,10 @@ extension BmmDetailTableViewController: BmmAlertCellDelegate {
 extension BmmDetailTableViewController: BmmPickerCellDelegate {
     func pickerDateDidChanged(date: Date, cell: BmmPickerCell) {
         
-        models
-            .value
-            .replaceSubrange(Range(4...5),
+        models?.replaceSubrange(Range(4...5),
                              with: [BmmAlarmViewModel(alarmDate: date),
                                     BmmPickerViewModel(alarmDate: date)])
+        tableView.reloadData()
     }
 }
 

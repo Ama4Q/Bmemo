@@ -35,7 +35,7 @@ extension CGFloat {
             if pkS.rawValue == "open" {
                 self = 150
             } else {
-                self = 0
+                self = 60
             }
         default:
             self = 60
