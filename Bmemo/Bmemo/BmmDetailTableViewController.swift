@@ -28,25 +28,7 @@ class BmmDetailTableViewController: UITableViewController {
     }
     
     let disposeBag = DisposeBag()
-    var member: BmmMembers? {
-        willSet {
-            models =
-                [BmmNinameViewModel(niName: newValue?.niName),
-                 BmmBaseViewModel(),
-                 BmmCalendarViewModel(gC: newValue?.gregorianCalendar, lC: newValue?.lunarCalendar),
-                 BmmAlertViewModel(alarmDate: newValue?.alarmDate),
-                 BmmAlarmViewModel(alarmDate: newValue?.alarmDate),
-                 BmmRemarkViewModel(remark: newValue?.remark)]
-            
-            if newValue?.gregorianCalendar != nil {
-                addStatus = .open
-            }
-            
-            if newValue?.alarmDate != nil {
-                alertStatus = .open
-            }
-        }
-    }
+    var member: BmmMembers?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,6 +104,28 @@ extension BmmDetailTableViewController {
             })
             .addDisposableTo(disposeBag)
         
+        Observable
+            .just(member)
+            .asObservable()
+            .subscribe(onNext: { [weak self] (ms) in
+                self?.models =
+                    [BmmNinameViewModel(niName: ms?.niName),
+                     BmmAddViewModel(),
+                     BmmCalendarViewModel(gC: ms?.gregorianCalendar, lC: ms?.lunarCalendar),
+                     BmmAlertViewModel(alarmDate: ms?.alarmDate),
+                     BmmAlarmViewModel(alarmDate: ms?.alarmDate),
+                     BmmRemarkViewModel(remark: ms?.remark)]
+                
+                if ms?.gregorianCalendar != nil {
+                    self?.addStatus = .open
+                }
+                
+                if ms?.alarmDate != nil {
+                    self?.alertStatus = .open
+                }
+            })
+            .addDisposableTo(disposeBag)
+        
     }
 }
 
@@ -155,17 +159,18 @@ extension BmmDetailTableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)
         
-        switch indexPath.row {
-        case 1:
-            if addStatus != .open {
+        switch cell.self {
+        case is BmmAddCell:
+            if addStatus == .close {
                 // code test
                 addStatus = .open
                 tableViewUpdates()
             }
-            
-        case 4:
+        case is BmmCalendarCell:
+            break
+        case is BmmAlarmCell:
             if pickerStatus == .close {
                 pickerStatus = .open
                 models?.insert(BmmPickerViewModel(alarmDate: (models?[4] as! BmmAlarmViewModel).alarmDate), at: 5)
@@ -175,7 +180,6 @@ extension BmmDetailTableViewController {
                 models?.remove(at: 5)
                 tableView.deleteRows(at: [IndexPath(row: 5, section: 0)], with: .middle)
             }
-        
         default:
             break
         }

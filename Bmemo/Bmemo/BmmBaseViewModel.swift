@@ -11,7 +11,8 @@ import Foundation
 class BmmBaseViewModel {
 
     var identifier: String? {
-        return "BmmAddCellId"
+        return String()
     }
+    
 
 }

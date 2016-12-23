@@ -356,7 +356,7 @@
                                     <outlet property="niNameTextField" destination="gzS-8x-cMx" id="W8Z-eU-s0y"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BmmAddCellId" textLabel="pgJ-nD-aVN" style="IBUITableViewCellStyleDefault" id="ebW-mV-PF3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BmmAddCellId" textLabel="pgJ-nD-aVN" style="IBUITableViewCellStyleDefault" id="ebW-mV-PF3" customClass="BmmAddCell" customModule="Bmemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="111" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebW-mV-PF3" id="fzg-fa-lFO">
