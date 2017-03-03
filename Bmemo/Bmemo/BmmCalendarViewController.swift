@@ -11,6 +11,8 @@ import AMACalendar
 import RxSwift
 import RxCocoa
 
+typealias calendarSelectCB = ((_ cal: (String, String)) -> ())
+
 class BmmCalendarViewController: UIViewController {
     @IBOutlet weak var calendar: calendarView!
     @IBOutlet weak var calendarLabel: UILabel!
@@ -19,14 +21,17 @@ class BmmCalendarViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    fileprivate var selectedGC: Variable<String> = Variable(String())
-    fileprivate var selectedLC: Variable<String> = Variable(String())
+    fileprivate var selectedGC: Variable<String> = Variable("")
+    fileprivate var selectedLC: Variable<String> = Variable("")
+    
+    var calendarTupe: calendarSelectCB?
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         RxMethod()
+        
     }
     
     deinit {
@@ -35,14 +40,22 @@ class BmmCalendarViewController: UIViewController {
 
 }
 
+// MARK: - open
+extension BmmCalendarViewController {
+    func didSelectCalendar( b: @escaping calendarSelectCB) {
+        calendarTupe = b
+    }
+}
+
 // MARK: - Rx
 extension BmmCalendarViewController {
     fileprivate func RxMethod() {
         sureBtn
             .rx
             .tap
-            .subscribe(onNext: { (_) in
-                
+            .subscribe(onNext: { [weak self] (_) in
+                self?.calendarTupe!((self!.selectedGC.value, self!.selectedLC.value))
+                self?.dismiss(animated: true, completion: nil)
             })
             .addDisposableTo(disposeBag)
         
