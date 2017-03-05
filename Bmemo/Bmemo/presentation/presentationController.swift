@@ -33,6 +33,10 @@ class presentationAnimatorController: UIPresentationController {
         // UI
         UI()
     }
+    
+    deinit {
+        debugPrint("presentationAnimatorController--deinit")
+    }
 }
 
 extension presentationAnimatorController {
