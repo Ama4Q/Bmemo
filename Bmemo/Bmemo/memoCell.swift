@@ -72,7 +72,7 @@ class memoCell: BmmTableViewCell {
     }
     
     func dataFromCell(members: BmmMembers, idx: Int) {
-        photo = UIImage(named: "photo")
+        photo = UIImage(named: "photo")?.drawHeaderImage()
         nname = members.niName
         aDate = members.alarmDate
         dCalendar = members.gregorianCalendar

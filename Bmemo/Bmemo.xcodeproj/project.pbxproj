@@ -39,6 +39,8 @@
 		81DC93DC1E0CE886002BDE2D /* BmmAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DC93DB1E0CE886002BDE2D /* BmmAddViewModel.swift */; };
 		81EBA0981DED7198003FBF21 /* BmmHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */; };
 		81EBA09A1DED8432003FBF21 /* BmmDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */; };
+		81EBD7DB1E6D3F3B0005BDCD /* HeaderImage_Bmm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBD7DA1E6D3F3B0005BDCD /* HeaderImage_Bmm.swift */; };
+		81EBD7E21E6D5AB60005BDCD /* BmmSysPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBD7E11E6D5AB60005BDCD /* BmmSysPicture.swift */; };
 		81F2B7571DE68E05003E0D4C /* BmmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2B7561DE68E05003E0D4C /* BmmTableViewCell.swift */; };
 		81F2B7591DE68FCD003E0D4C /* BmmRotatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2B7581DE68FCD003E0D4C /* BmmRotatedView.swift */; };
 		81F2B75B1DE6DB46003E0D4C /* memoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F2B75A1DE6DB46003E0D4C /* memoCell.swift */; };
@@ -82,6 +84,8 @@
 		81DC93DB1E0CE886002BDE2D /* BmmAddViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmAddViewModel.swift; sourceTree = "<group>"; };
 		81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmHeaderView.swift; sourceTree = "<group>"; };
 		81EBA0991DED8432003FBF21 /* BmmDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmDetailTableViewController.swift; sourceTree = "<group>"; };
+		81EBD7DA1E6D3F3B0005BDCD /* HeaderImage_Bmm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderImage_Bmm.swift; sourceTree = "<group>"; };
+		81EBD7E11E6D5AB60005BDCD /* BmmSysPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmSysPicture.swift; sourceTree = "<group>"; };
 		81F2B7561DE68E05003E0D4C /* BmmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmTableViewCell.swift; sourceTree = "<group>"; };
 		81F2B7581DE68FCD003E0D4C /* BmmRotatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmmRotatedView.swift; sourceTree = "<group>"; };
 		81F2B75A1DE6DB46003E0D4C /* memoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memoCell.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 		817AFAF41DF5707600BA98DF /* bll */ = {
 			isa = PBXGroup;
 			children = (
+				81EBD7E01E6D5A7C0005BDCD /* sysPicture */,
 				818D3D751E0A52E600F013C9 /* presentation */,
 				81021C421DF66E180065C859 /* models */,
 				813F23001DF81B1600AF24A8 /* ParsingViewModel.swift */,
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				81EBA0971DED7198003FBF21 /* BmmHeaderView.swift */,
+				81EBD7DA1E6D3F3B0005BDCD /* HeaderImage_Bmm.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -268,6 +274,14 @@
 				818D3D791E0A577E00F013C9 /* presentationController.swift */,
 			);
 			name = presentation;
+			sourceTree = "<group>";
+		};
+		81EBD7E01E6D5A7C0005BDCD /* sysPicture */ = {
+			isa = PBXGroup;
+			children = (
+				81EBD7E11E6D5AB60005BDCD /* BmmSysPicture.swift */,
+			);
+			name = sysPicture;
 			sourceTree = "<group>";
 		};
 		81F2B7551DE68DF0003E0D4C /* Cell */ = {
@@ -425,6 +439,7 @@
 				8160ED361DE59C2C0030CC82 /* BmmMainTableViewController.swift in Sources */,
 				81DC93DC1E0CE886002BDE2D /* BmmAddViewModel.swift in Sources */,
 				817AFAF71DF5738300BA98DF /* BmmAlertCell.swift in Sources */,
+				81EBD7DB1E6D3F3B0005BDCD /* HeaderImage_Bmm.swift in Sources */,
 				813F23011DF81B1600AF24A8 /* ParsingViewModel.swift in Sources */,
 				81536D051DF1C17D0026BC65 /* BmmAlarmCell.swift in Sources */,
 				81CD824E1DE7F53D0017A3C6 /* UIView_Bmm.swift in Sources */,
@@ -448,6 +463,7 @@
 				81F2B7571DE68E05003E0D4C /* BmmTableViewCell.swift in Sources */,
 				81536D071DF1C1E90026BC65 /* BmmRemarkCell.swift in Sources */,
 				81DC93DA1E0CC83B002BDE2D /* BmmAddCell.swift in Sources */,
+				81EBD7E21E6D5AB60005BDCD /* BmmSysPicture.swift in Sources */,
 				81021C441DF66E590065C859 /* BmmMembers.swift in Sources */,
 				813F791E1DF707A200F37A03 /* BmmAlarmViewModel.swift in Sources */,
 				818D3D7A1E0A577E00F013C9 /* presentationController.swift in Sources */,

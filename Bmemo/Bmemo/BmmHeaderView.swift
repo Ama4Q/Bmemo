@@ -89,7 +89,7 @@ extension BmmHeaderView {
         
         frame = CGRect(x: 0, y: 0, width: kWidth, height: kWidth)
         
-        headerBtn = UIButton.customBtn(rect: frame)
+        headerBtn = UIButton(frame: frame)
         addSubview(headerBtn!)
     }
 }
@@ -103,22 +103,5 @@ extension BmmHeaderView {
     func handleClickActionWithClosure(closure: @escaping ClickHeaderClosure) {
         clickHeaderClosure = closure
         isUserInteractionEnabled = true
-    }
-}
-
-// MARK: - extension buttion
-extension UIButton {
-    class func customBtn(rect: CGRect) -> UIButton {
-        
-        let btn = UIButton(type: .custom)
-        btn.frame = rect
-        
-        btn.backgroundColor = UIColor.clear
-        btn.layer.borderWidth = 0.5
-        btn.layer.cornerRadius = 8
-        btn.layer.borderColor = UIColor.white.withAlphaComponent(0.5).cgColor
-        btn.clipsToBounds = true
-        
-        return btn
     }
 }

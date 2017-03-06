@@ -54,12 +54,15 @@ extension BmmDetailTableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         let headerView = BmmHeaderView()
-        headerView.photo = UIImage(named: "photo")
+        headerView.photo = UIImage(named: "photo")?.drawHeaderImage()
         navigationItem.titleView = headerView
         headerView.reloadSizeWithScrollView(scrollView: tableView)
         
-        headerView.handleClickActionWithClosure {
+        headerView.handleClickActionWithClosure { [unowned self] in
             debugPrint("aaa")
+            BmmSysPicture().syspicture(ctrol: self, cb: { (image) in
+                debugPrint(image)
+            })
         }
         
     }
